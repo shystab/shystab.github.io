@@ -1,0 +1,19 @@
+baseURL = 'https://Shystab.github.io//'
+title = 'Shystab'
+theme = "reimu"
+languageCode = 'zh-CN'
+defaultContentLanguage = 'zh-CN'
+[languages]
+[languages.zh-CN]
+languageName = "简体中文"
+weight = 1      
+[languages.zh-TW]
+languageName = "簡體中文"
+weight = 2           
+[languages.en]
+languageName = "English"
+weight = 3
+[languages.ja]
+languageName = "日本語"
+weight = 4
+

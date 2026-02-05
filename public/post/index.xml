@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shystab</title>
+    <link>http://localhost:1313/post/</link>
+    <description>Recent content from Shystab</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    
+    <managingEditor>213243859@seu.edu.cn (Shysta)</managingEditor>
+    <webMaster>213243859@seu.edu.cn (Shysta)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Wed, 04 Feb 2026 00:00:00 +0000</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>我的第一篇文章</title>
+      <link>http://localhost:1313/post/first-post/</link>
+      <pubDate>Wed, 04 Feb 2026 00:00:00 &#43;0000</pubDate>
+      <author>213243859@seu.edu.cn (Shysta)</author>
+      <guid>http://localhost:1313/post/first-post/</guid>
+      <description>
+        <![CDATA[<h1>我的第一篇文章</h1><p>作者：Shysta（213243859@seu.edu.cn）</p>
+        
+          这是我的第一篇博客文章&hellip;
+        
+        <hr><p>本文2026-02-04首发于<a href='http://localhost:1313/'>Shystab</a>，最后修改于2026-02-04</p>]]>
+      </description>
+      
+        <category>教程</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>test post</title>
+      <link>http://localhost:1313/post/%E6%B5%8B%E8%AF%95%E8%B4%B4/</link>
+      <pubDate>Wed, 04 Feb 2026 00:00:00 &#43;0000</pubDate>
+      <author>213243859@seu.edu.cn (Shysta)</author>
+      <guid>http://localhost:1313/post/%E6%B5%8B%E8%AF%95%E8%B4%B4/</guid>
+      <description>
+        <![CDATA[<h1>test post</h1><p>作者：Shysta（213243859@seu.edu.cn）</p>
+        
+          <p>##测试贴 hiahia
+此篇为测试贴 用于测试一些功能。</p>
+<p><strong>关注</strong> <em>tafy</em> <del>喵</del></p>
+<blockquote>
+<p>我是嘉然小姐的*！</p>
+</blockquote>
+<ul>
+<li>无序列表项一</li>
+<li>无序列表项二
+<ul>
+<li>嵌套列表项</li>
+</ul>
+</li>
+</ul>
+<p><img src="/post/%E6%B5%8B%E8%AF%95%E8%B4%B4/tafy.jpg" alt="塔菲可爱捏"></p>
+<details class="details custom-block">
+  <summary></summary>
+  <div class="details-content"><p>喵~</p>
+</div>
+</details>
+<div class="gallery-wall" id="photoWall-eeb3df150"></div>
+<script>
+  (function() {
+    const imageUrls = JSON.parse("[\"/post/%E6%B5%8B%E8%AF%95%E8%B4%B4/a.jpg\",\"/post/%E6%B5%8B%E8%AF%95%E8%B4%B4/b.jpg\"]");
+    let images = [];
+    const wallId = '#photoWall-eeb3df150';
+    let resizeTimer;
+    let lastWidth = 0;
+    
+    function init() {
+      createInitialDOM();
+      loadImages();
+      const wall = _$(wallId);
+      if (wall && window.ResizeObserver) {
+        const observer = new ResizeObserver((entries) => {
+          const newWidth = entries[0].contentRect.width;
+          if (Math.abs(newWidth - lastWidth) > 1) {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(renderPhotoWall, 250);
+          }
+        });
+        observer.observe(wall);
+      } else {
+        window.addEventListener('resize', handleResize);
+      }
+    }
+    
+    function createInitialDOM() {
+      const wall = _$(wallId);
+      if (!wall || !imageUrls.length) return;
+      
+      wall.style.opacity = '0';
+      wall.style.pointerEvents = 'none';
+      
+      imageUrls.forEach((url) => {
+        images.push({
+          width: 800,
+          height: 600,
+          aspectRatio: 4/3,
+          url: url,
+          loaded: false
+        });
+      });
+      
+      renderPhotoWall();
+    }
+    
+    function loadImages() {
+      const loadPromises = imageUrls.map((url, index) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = () => {
+            if (images[index]) {
+              images[index].width = img.naturalWidth;
+              images[index].height = img.naturalHeight;
+              images[index].aspectRatio = img.naturalWidth / img.naturalHeight;
+              images[index].loaded = true;
+            }
+            resolve();
+          };
+          img.onerror = () => {
+            if (images[index]) {
+              images[index].loaded = true;
+            }
+            resolve();
+          };
+          img.src = url;
+        });
+      });
+      
+      Promise.all(loadPromises)
+        .then(() => {
+          const wall = _$(wallId);
+          if (wall) {
+            wall.style.opacity = '1';
+            wall.style.pointerEvents = 'auto';
+            wall.style.transition = 'opacity 0.3s ease';
+          }
+          renderPhotoWall();
+        })
+        .catch((error) => console.error("图片加载失败:", error));
+    }
+    
+    function renderPhotoWall() {
+      const wall = _$(wallId);
+      
+      if (!images.length || !wall) return;
+      
+      const screenWidth = wall.offsetWidth || window.innerWidth - 40;
+      lastWidth = screenWidth;
+      
+      wall.innerHTML = "";
+      const rowHeight = 200;
+      const gap = 10;
+      const maxPerRow = 4;
+      
+      let row = [];
+      let rowWidth = 0;
+      const rows = [];
+      
+      images.forEach((img) => {
+        const scaledWidth = rowHeight * img.aspectRatio;
+        
+        if (rowWidth + scaledWidth <= screenWidth && row.length < maxPerRow) {
+          row.push(img);
+          rowWidth += scaledWidth + gap;
+        } else {
+          if (row.length) rows.push(row);
+          row = [img];
+          rowWidth = scaledWidth + gap;
+        }
+      });
+      
+      if (row.length) rows.push(row);
+      
+      rows.forEach((row) => {
+        const rowDiv = document.createElement("div");
+        rowDiv.style.cssText = `display: flex; gap: ${gap}px; width: 100%`;
+        
+        row.forEach((img) => {
+          const item = document.createElement("div");
+          item.className = "photo-item";
+          const flex = row.length === 1 ? '1' : img.aspectRatio;
+          item.style.cssText = `flex: ${flex}; height: ${rowHeight}px`;
+          
+          const imgEl = document.createElement("img");
+          imgEl.alt = "Gallery Image";
+          imgEl.style.cssText = "width: 100%; height: 100%; object-fit: cover";
+          imgEl.className = "lazyload";
+          imgEl.dataset.src = img.url;
+          imgEl.dataset.sizes = "auto";
+
+          const link = document.createElement("a");
+          link.href = img.url;
+          link.dataset.pswpWidth = img.width;
+          link.dataset.pswpHeight = img.height;
+          link.target = "_blank";
+          link.className = "article-gallery-item";
+          link.style.cssText = "width: 100%; height: 100%";
+          link.appendChild(imgEl);
+          
+          item.appendChild(link);
+          rowDiv.appendChild(item);
+        });
+        
+        wall.appendChild(rowDiv);
+      });
+    }
+    
+    function handleResize() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(renderPhotoWall, 250);
+    }
+    
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  })();
+</script><link rel="preload" as="style" href="/css/gallery.css" onload="this.onload=null;this.rel='stylesheet'" />
+<blockquote class="alert-blockquote warning">
+  <p class="alert-heading">
+    Warning
+  </p>
+        
+        <hr><p>本文2026-02-04首发于<a href='http://localhost:1313/'>Shystab</a>，最后修改于2026-02-04</p>]]>
+      </description>
+      
+    </item>
+    
+  </channel>
+</rss>
