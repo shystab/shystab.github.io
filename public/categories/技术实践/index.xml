@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技术实践 on Shystab</title>
+    <link>http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/</link>
+    <description>Recent content from Shystab</description>
+    <generator>Hugo</generator>
+    <language>zh-cn</language>
+    
+    <managingEditor>213243859@seu.edu.cn (Shysta)</managingEditor>
+    <webMaster>213243859@seu.edu.cn (Shysta)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Thu, 05 Feb 2026 20:30:00 +0800</lastBuildDate>
+    
+    
+    <atom:link href="http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>Hugo：我的博客与 Reimu 主题探索之旅</title>
+      <link>http://localhost:1313/post/hugo&#43;reimu/</link>
+      <pubDate>Thu, 05 Feb 2026 20:30:00 &#43;0800</pubDate>
+      <author>213243859@seu.edu.cn (Shysta)</author>
+      <guid>http://localhost:1313/post/hugo&#43;reimu/</guid>
+      <description>
+        <![CDATA[<h1>Hugo：我的博客与 Reimu 主题探索之旅</h1><p>作者：Shysta（213243859@seu.edu.cn）</p>
+        
+          记录一次完整的博客搭建过程：为何放弃Stack 主题，最终投入 Hugo 与 Reimu 主题的怀抱，并解决一系列配置与部署问题的全过程。
+        
+        <hr><p>本文2026-02-05首发于<a href='http://localhost:1313/'>Shystab</a>，最后修改于2026-02-05</p>]]>
+      </description>
+      
+        <category>技术实践</category>
+      
+    </item>
+    
+  </channel>
+</rss>

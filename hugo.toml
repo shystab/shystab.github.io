@@ -16,4 +16,7 @@ weight = 3
 [languages.ja]
 languageName = "日本語"
 weight = 4
+[markup.highlight]
+guessSyntax = true
+noClasses = false
 

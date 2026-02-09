@@ -11,4 +11,6 @@ print("Hello World")
 ``` 
 
 费劲气力，算是找到一点门道。
-原本shysta准备用stack的主题，但stack的主题目前似乎改版，相比之前部署本地的模式，现在的quick-starter只能同步到GitHub上。
+原本shysta准备用stack的主题，但stack的主题目前似乎改版，相比之前部署本地的模式，现在的quick-starter只能同步到GitHub上。但最终都是搞好啦（笑嘻嘻）
+
+![cat](cat.jpg)
