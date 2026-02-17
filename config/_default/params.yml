@@ -31,7 +31,7 @@ email: 213243859@seu.edu.cn
 description: "二次元死开！"
 subtitle: "关注塔菲喵"
 
-banner: "images/banner 2.webp"
+banner: "images/banner-1.webp"
 # You can also write it in the form of the following url
 # banner: "https://example.com"
 
@@ -39,11 +39,11 @@ banner: "images/banner 2.webp"
 banner_srcset:
   enable: true
   srcset:
-    - src: "images/banner-600w.webp"
+    - src: "images/banner-3.webp"
       media: "(max-width: 479px)"
-    - src: "images/banner-800w.webp"
+    - src: "images/banner-2.webp"
       media: "(max-width: 799px)"
-    - src: "images/banner.webp"
+    - src: "images/banner-1.webp"
       media: "(min-width: 800px)"
 
 avatar: "avatar.webp"

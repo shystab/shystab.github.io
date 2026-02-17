@@ -1,12 +1,12 @@
 (() => {
   // <stdin>
-  var VERSION = "1770609334";
+  var VERSION = "1771324502";
   var preCache = [
     "/images/taichi.png",
     "/css/loader.css",
     "/css/main.css",
     "/js/main.js",
-    "/images/banner 2.webp"
+    "/images/banner-1.webp"
   ];
   var cacheDomain = [
     "fonts.googleapis.com",

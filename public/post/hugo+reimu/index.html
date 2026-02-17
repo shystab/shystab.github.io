@@ -205,13 +205,16 @@
   <nav id="TableOfContents">
   <ul>
     <li><a href="#前言为什么想搭建博客">前言：为什么想搭建博客</a></li>
-    <li><a href="#第一阶段stack主题">第一阶段：stack主题</a></li>
-    <li><a href="#第二阶段遇见-reimu一见钟情">第二阶段：遇见 Reimu，一见钟情</a></li>
+    <li><a href="#第一阶段选择主题">第一阶段：选择主题</a></li>
     <li><a href="#第三阶段配置">第三阶段：配置</a>
       <ul>
+        <li><a href="#一般来说-有两种方法下载主题">一般来说 有两种方法下载主题</a></li>
+        <li><a href="#此处介绍1方法我就是这样的个人感觉更不更新无所谓">此处介绍1方法（我就是这样的，个人感觉更不更新无所谓）</a></li>
         <li><a href="#部署至github">部署至github</a></li>
+        <li><a href="#网站的额外功能-如评论-播放器">网站的额外功能 如评论 播放器</a></li>
       </ul>
     </li>
+    <li><a href="#文章更新">文章更新</a></li>
   </ul>
 </nav>
 </div></div>
@@ -309,30 +312,16 @@
 </div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h2 id="前言为什么想搭建博客">
 <a class="header-anchor" href="#%e5%89%8d%e8%a8%80%e4%b8%ba%e4%bb%80%e4%b9%88%e6%83%b3%e6%90%ad%e5%bb%ba%e5%8d%9a%e5%ae%a2"></a>
 前言：为什么想搭建博客
-</h2><p>答案：<em>装逼</em> 或者说是学习历程吧，原本想学后端或者前端的，也试着跑了一个flask框架，但这些学习周期有些长，所以搭建了一个博客，后面找实习也方便些。</p>
-<h2 id="第一阶段stack主题">
-<a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e9%98%b6%e6%ae%b5stack%e4%b8%bb%e9%a2%98"></a>
-第一阶段：stack主题
+</h2><p>答案：<del>装逼</del> 学习！！博客本身不复杂，但它包含了很多内容，其实大一就应该试着做做的，但信息差还有游戏（悲）耽误了学习进度，姑且算是卷绩点了吧。从学习路径来看，搭建博客是一个成本可控、反馈周期短的项目。所以have a try！</p>
+<p>寒假开始时先试着跟着gpt走了一个flask小框架（差点就去学后端了）深似海啊，还是先搭一个博客练练手。</p>
+<h2 id="第一阶段选择主题">
+<a class="header-anchor" href="#%e7%ac%ac%e4%b8%80%e9%98%b6%e6%ae%b5%e9%80%89%e6%8b%a9%e4%b8%bb%e9%a2%98"></a>
+第一阶段：选择主题
 </h2><p>我的 Hugo 之旅始于知名的 <strong>Stack 主题</strong>。它设计简洁、文档完善，是许多人的入门之选。</p>
 <p>但在那之前，我在hugo的path路径上吃了点亏。首先我学到了path路径就是用户变量里面的一个变量，直接在后面加就可以（悲）。</p>
-<blockquote class="alert-blockquote note">
-  <p class="alert-heading">
-    Note
-  </p>
-  <p><strong>Stack 主题的优点</strong>：安装简单，响应式设计优秀，对于写纯文字博客非常友好。此外现在的一键部署也很方便。</p>
-
-</blockquote>
-<p>但是我就是不想要一键部署，原本stack是有examplesites的文件我可以用那个直接改，后面被一键部署替代，我看新的demo文件头大的要死。这个卡了一天多。</p>
-<ol>
-<li><strong>风格过于通用</strong>：虽然精致，但缺乏让我眼前一亮的个性元素，比如我不能搞得味大一点。</li>
-<li><strong>功能拓展性</strong>：想要集成一些偏“二次元”或趣味性的小部件（如看板娘、特效）较为困难，或者说对我比较困难。</li>
-<li><strong>审美疲劳</strong>：它的设计语言在众多技术博客中太常见了。</li>
-</ol>
-<p><strong>于是，我决定继续寻找那个能让我“心动”的主题。</strong></p>
-<h2 id="第二阶段遇见-reimu一见钟情">
-<a class="header-anchor" href="#%e7%ac%ac%e4%ba%8c%e9%98%b6%e6%ae%b5%e9%81%87%e8%a7%81-reimu%e4%b8%80%e8%a7%81%e9%92%9f%e6%83%85"></a>
-第二阶段：遇见 Reimu，一见钟情
-</h2><p>在一次偶然的主题探索中，我发现了 <strong>D-Sketon</strong> 开发的 <strong>hugo-theme-reimu</strong>。它基于东方Project的“博丽灵梦”角色风格，瞬间吸引了我的目光。（其实我不是二次元）</p>
+<p>但是我就是不想要一键部署（犟种），原本stack是有examplesites的文件我可以用那个直接改，后面被一键部署替代，我看新的demo文件头大的要死。这个卡了一天多。所以如果你愿意用GitHub一键部署，stack其实还是个很好的选择。</p>
+<p><strong>所以，换个主题吧</strong></p>
+<p>在一次偶然的主题探索中，我发现了 <strong>D-Sketon</strong>大佬 开发的 <strong>hugo-theme-reimu</strong>。它基于东方Project的“博丽灵梦”角色风格，瞬间吸引了我的目光。（其实我不是二次元）</p>
 <div class="gallery-wall" id="photoWall-e348b4ddb"></div>
 <script>
   (function() {
@@ -502,22 +491,41 @@
 <li>📦 无数实用的短代码（相册、标签页、折叠框等）</li>
 <li>🌙 完美的暗黑模式与动态主题色支持</li>
 </ul>
-<p>我意识到，这就是我想要的——一个<strong>味大的一批，又能很好的装逼</strong>的主题。</p>
+<p>不错不错，我把博客打扮的很二次元，营造一种<strong>味大的一批，一看就很强</strong>的赶脚。</p>
 <h2 id="第三阶段配置">
 <a class="header-anchor" href="#%e7%ac%ac%e4%b8%89%e9%98%b6%e6%ae%b5%e9%85%8d%e7%bd%ae"></a>
 第三阶段：配置
 </h2><p>迁移过程并非一帆风顺，我遇到了几个典型问题，但相比之前还是很好解决的。</p>
 <p>下面把整个流程打出来：</p>
-<p>先下载hugo本体：https://gohugo.io/配置path。</p>
+<p>先下载hugo本体：https://gohugo.io/
+然后记得配置path。</p>
 <p>在hugo文件夹命令行内运行</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">hugo version
 </span></span></code></pre></div><p>检验是否安装成功。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">hugo new site myblog
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">hugo new site myblog#或者你的文件夹名 自行创建
 </span></span><span class="line"><span class="cl"><span class="k">cd</span> myblog
 </span></span><span class="line"><span class="cl">git init
 </span></span></code></pre></div><p>而后看到官方出的几行教程，请仔细阅读。有助于你理解搭建过程。</p>
-<p>首先你要有git（尽量）：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># 在 Hugo 站点目录下执行
+<h3 id="一般来说-有两种方法下载主题">
+<a class="header-anchor" href="#%e4%b8%80%e8%88%ac%e6%9d%a5%e8%af%b4-%e6%9c%89%e4%b8%a4%e7%a7%8d%e6%96%b9%e6%b3%95%e4%b8%8b%e8%bd%bd%e4%b8%bb%e9%a2%98"></a>
+一般来说 有两种方法下载主题
+</h3><ol>
+<li>
+<p>使用git或直接下载压缩包解压https://github.com/D-Sketon/hugo-theme-reimu.git</p>
+</li>
+<li>
+<p>submodule 方式
+这样做的好处是：
+主题版本可追踪
+仓库结构清晰
+便于 CI 拉取</p>
+</li>
+</ol>
+<p>当然也可以用官网的hugo-reimu-template 小白很舒服</p>
+<h3 id="此处介绍1方法我就是这样的个人感觉更不更新无所谓">
+<a class="header-anchor" href="#%e6%ad%a4%e5%a4%84%e4%bb%8b%e7%bb%8d1%e6%96%b9%e6%b3%95%e6%88%91%e5%b0%b1%e6%98%af%e8%bf%99%e6%a0%b7%e7%9a%84%e4%b8%aa%e4%ba%ba%e6%84%9f%e8%a7%89%e6%9b%b4%e4%b8%8d%e6%9b%b4%e6%96%b0%e6%97%a0%e6%89%80%e8%b0%93"></a>
+此处介绍1方法（我就是这样的，个人感觉更不更新无所谓）
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># 在 Hugo 站点目录下执行
 </span></span><span class="line"><span class="cl">git submodule add https://github.com/D-Sketon/hugo-theme-reimu.git themes/reimu
 </span></span></code></pre></div><p>或者你直接去github里面下载压缩包：https://github.com/D-Sketon然后将其解压至theme文件夹内。（名改成reimu）</p>
 <details class="details custom-block">
@@ -526,20 +534,116 @@
 <a class="header-anchor" href="#%e9%a1%b9%e7%9b%ae%e6%a0%b9%e7%9b%ae%e5%bd%95%e4%b8%8b%e7%9a%84-hugotoml-%e6%96%87%e4%bb%b6"></a>
 项目根目录下的 hugo.toml 文件
 </h3><p>theme = “reimu”</p>
-<p>baseURL = ‘https://你的用户名.github.
-io/‘ # 部署前切记修改此项！</p>
+<p>baseURL = ‘https://你的用户名.github.</p>
+<p>io/‘ # 部署前切记修改此项！</p>
 <p>languageCode = ‘zh-CN’</p>
 </div>
 </details>
-<p>此时直接在命令行运行</p>
+<p>而后参考官网readme文档里的创建配置章节，把数据配置（config文件夹）和静态资源复制到blog文件夹内容</p>
+<p>然后可自行阅读config的params文件配置代码 官网里有详细对应组件开启方式（笑）</p>
+<p>完成各自配置之后
+此时直接在命令行运行</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl"># 在博客文件内
 </span></span><span class="line"><span class="cl">hugo server
-</span></span></code></pre></div><h3 id="部署至github">
+</span></span></code></pre></div><p>然后打开命令控制行给的本地网址（ctrl+点击）
+即可看到自己的网站喵~</p>
+<h3 id="部署至github">
 <a class="header-anchor" href="#%e9%83%a8%e7%bd%b2%e8%87%b3github"></a>
 部署至github
 </h3><p>主要是静态网站没必要配置到服务器上，我也没那个心力了，于是就跟着教程配置到GitHub actions上。建议看这里https://github.com/peaceiris/actions-hugo 的教程再搭配ai食用。</p>
-<p>大体就是再创建一个.github\workflows文件夹 写hugo.yml文件。</p>
+<p>大体就是再创建一个.github\workflows文件夹 写hugo.yml文件。
+本人代码如下 可跑</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">name</span><span class="p">:</span> <span class="n">Deploy</span> <span class="n">Hugo</span> <span class="n">Site</span> <span class="n">to</span> <span class="n">GitHub</span> <span class="n">Pages</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">on</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">push</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">branches</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&#34;main&#34;</span> <span class="p">]</span>
+</span></span><span class="line"><span class="cl">  <span class="n">workflow_dispatch</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">permissions</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">contents</span><span class="p">:</span> <span class="n">read</span>
+</span></span><span class="line"><span class="cl">  <span class="n">pages</span><span class="p">:</span> <span class="n">write</span>
+</span></span><span class="line"><span class="cl">  <span class="n">id</span><span class="o">-</span><span class="n">token</span><span class="p">:</span> <span class="n">write</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">concurrency</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">group</span><span class="p">:</span> <span class="s2">&#34;pages&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">cancel</span><span class="o">-</span><span class="ow">in</span><span class="o">-</span><span class="n">progress</span><span class="p">:</span> <span class="bp">false</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">jobs</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="n">build</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">runs</span><span class="o">-</span><span class="n">on</span><span class="p">:</span> <span class="n">ubuntu</span><span class="o">-</span><span class="n">latest</span>
+</span></span><span class="line"><span class="cl">    <span class="n">steps</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">Checkout</span>
+</span></span><span class="line"><span class="cl">        <span class="n">uses</span><span class="p">:</span> <span class="n">actions</span><span class="o">/</span><span class="n">checkout</span><span class="err">@</span><span class="n">v4</span>
+</span></span><span class="line"><span class="cl">        <span class="n">with</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">          <span class="n">submodules</span><span class="p">:</span> <span class="n">recursive</span>
+</span></span><span class="line"><span class="cl">          <span class="n">fetch</span><span class="o">-</span><span class="n">depth</span><span class="p">:</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">Setup</span> <span class="n">Hugo</span>
+</span></span><span class="line"><span class="cl">        <span class="n">uses</span><span class="p">:</span> <span class="n">peaceiris</span><span class="o">/</span><span class="n">actions</span><span class="o">-</span><span class="n">hugo</span><span class="err">@</span><span class="n">v2</span>
+</span></span><span class="line"><span class="cl">        <span class="n">with</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">          <span class="n">hugo</span><span class="o">-</span><span class="n">version</span><span class="p">:</span> <span class="s1">&#39;latest&#39;</span>
+</span></span><span class="line"><span class="cl">          <span class="n">extended</span><span class="p">:</span> <span class="bp">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">Build</span>
+</span></span><span class="line"><span class="cl">        <span class="n">run</span><span class="p">:</span> <span class="n">hugo</span> <span class="o">--</span><span class="n">minify</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">Setup</span> <span class="n">Pages</span>
+</span></span><span class="line"><span class="cl">        <span class="n">uses</span><span class="p">:</span> <span class="n">actions</span><span class="o">/</span><span class="n">configure</span><span class="o">-</span><span class="n">pages</span><span class="err">@</span><span class="n">v4</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">Upload</span> <span class="n">artifact</span>
+</span></span><span class="line"><span class="cl">        <span class="n">uses</span><span class="p">:</span> <span class="n">actions</span><span class="o">/</span><span class="n">upload</span><span class="o">-</span><span class="n">pages</span><span class="o">-</span><span class="n">artifact</span><span class="err">@</span><span class="n">v3</span>
+</span></span><span class="line"><span class="cl">        <span class="n">with</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">          <span class="n">path</span><span class="p">:</span> <span class="o">./</span><span class="n">public</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">deploy</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">environment</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="n">name</span><span class="p">:</span> <span class="n">github</span><span class="o">-</span><span class="n">pages</span>
+</span></span><span class="line"><span class="cl">      <span class="n">url</span><span class="p">:</span> <span class="o">$</span><span class="p">{{</span> <span class="n">steps</span><span class="o">.</span><span class="n">deployment</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">page_url</span> <span class="p">}}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">runs</span><span class="o">-</span><span class="n">on</span><span class="p">:</span> <span class="n">ubuntu</span><span class="o">-</span><span class="n">latest</span>
+</span></span><span class="line"><span class="cl">    <span class="n">needs</span><span class="p">:</span> <span class="n">build</span>
+</span></span><span class="line"><span class="cl">    <span class="n">steps</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="o">-</span> <span class="n">name</span><span class="p">:</span> <span class="n">Deploy</span> <span class="n">to</span> <span class="n">GitHub</span> <span class="n">Pages</span>
+</span></span><span class="line"><span class="cl">        <span class="n">id</span><span class="p">:</span> <span class="n">deployment</span>
+</span></span><span class="line"><span class="cl">        <span class="n">uses</span><span class="p">:</span> <span class="n">actions</span><span class="o">/</span><span class="n">deploy</span><span class="o">-</span><span class="n">pages</span><span class="err">@</span><span class="n">v4</span>
+</span></span></code></pre></div><p>GitHub Pages 不会运行 Hugo，它只托管静态文件。
+所以必须借助 GitHub Actions。
+流程是：
+git push
+GitHub Actions 执行 hugo build
+生成 public/
+部署到 Pages</p>
 <p>遇到一些faliure可以抽查gpt啥的。反正最后在GitHub运行起来就蛮不错的</p>
+<h3 id="网站的额外功能-如评论-播放器">
+<a class="header-anchor" href="#%e7%bd%91%e7%ab%99%e7%9a%84%e9%a2%9d%e5%a4%96%e5%8a%9f%e8%83%bd-%e5%a6%82%e8%af%84%e8%ae%ba-%e6%92%ad%e6%94%be%e5%99%a8"></a>
+网站的额外功能 如评论 播放器
+</h3><p>暂缺嘻嘻</p>
+<h2 id="文章更新">
+<a class="header-anchor" href="#%e6%96%87%e7%ab%a0%e6%9b%b4%e6%96%b0"></a>
+文章更新
+</h2><p>按照content/post/文章名/index.md（可在文件夹里加图片方便插入）或者content/post/文章名.md格式整理自己的文章后 把本地的更新推送到github上</p>
+<p>仍然是使用<em>git</em> <del>其实我也不会用哈哈 慢慢学着用</del></p>
+<p>第一步：添加所有更改</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">git add .
+</span></span></code></pre></div><p>这条命令会将你所有新的修改（包括新文章、修改的配置等）标记为“待提交”。</p>
+<p>第二步：创建提交记录（给这次更新起个名字）</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">git commit -m <span class="s2">&#34;发布新文章：《你的文章标题》&#34;</span>
+</span></span></code></pre></div><p>将引号内的 《你的文章标题》 换成你实际的文章标题，例如 git commit -m &ldquo;发布新文章：《我的Hugo之旅》&quot;。这条命令相当于给你的这次更新拍个快照、贴个标签。</p>
+<p>第三步：推送到云端，触发自动部署</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">git push
+</span></span></code></pre></div><p>这条命令会将你本地的“快照”推送到GitHub。这是最关键的一步，因为它会触发我们之前配置好的 GitHub Actions 工作流，自动开始构建并部署你的新网站。
+然后等待终端完成后去看看GitHub action任务是否允许成功（等待一小会）
+成功之后便可去看你的新网页啦</p>
+<blockquote class="alert-blockquote note">
+  <p class="alert-heading">
+    Note
+  </p>
+  <p><strong>注意</strong>：在本机上验证网站允许正常再推送会好一点</p>
+
+</blockquote>
+<p>然后很高兴你成功搭建了自己的网站<em>开心喵</em>
+快去告诉小伙伴吧！</p>
 </div>
     <footer class="article-footer"><blockquote class="article-copyright"><p><strong><span class="icon-user icon"></span>本文作者：</strong>Shysta</p><p>
       <strong><span class="icon-link icon"></span>本文链接：</strong><a href="http://localhost:1313/post/hugo&#43;reimu/">http://localhost:1313/post/hugo&#43;reimu/</a>
@@ -672,10 +776,10 @@ io/‘ # 部署前切记修改此项！</p>
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;120</span
+          >&nbsp;294</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;00:03</span>
+        <span class="icon-coffee">&nbsp;00:04</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -702,13 +806,16 @@ io/‘ # 部署前切记修改此项！</p>
   <nav id="TableOfContents">
   <ul>
     <li><a href="#前言为什么想搭建博客">前言：为什么想搭建博客</a></li>
-    <li><a href="#第一阶段stack主题">第一阶段：stack主题</a></li>
-    <li><a href="#第二阶段遇见-reimu一见钟情">第二阶段：遇见 Reimu，一见钟情</a></li>
+    <li><a href="#第一阶段选择主题">第一阶段：选择主题</a></li>
     <li><a href="#第三阶段配置">第三阶段：配置</a>
       <ul>
+        <li><a href="#一般来说-有两种方法下载主题">一般来说 有两种方法下载主题</a></li>
+        <li><a href="#此处介绍1方法我就是这样的个人感觉更不更新无所谓">此处介绍1方法（我就是这样的，个人感觉更不更新无所谓）</a></li>
         <li><a href="#部署至github">部署至github</a></li>
+        <li><a href="#网站的额外功能-如评论-播放器">网站的额外功能 如评论 播放器</a></li>
       </ul>
     </li>
+    <li><a href="#文章更新">文章更新</a></li>
   </ul>
 </nav>
 </div></div>
