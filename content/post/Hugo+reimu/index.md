@@ -201,7 +201,9 @@ GitHub Actions 执行 hugo build
 暂缺嘻嘻
 
 ## 文章更新 
-按照content/post/文章名/index.md（可在文件夹里加图片方便插入）或者content/post/文章名.md格式整理自己的文章后 把本地的更新推送到github上
+按照content/post/文间夹名/index.md（可在文件夹里加图片方便插入）或者content/post/文章名.md格式整理自己的文章后 把本地的更新推送到github上
+
+具体文章抬头写法查阅官网或ai（建议ai）
 
 仍然是使用*git* ~其实我也不会用哈哈 慢慢学着用~
 
