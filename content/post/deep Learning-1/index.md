@@ -62,7 +62,7 @@ class My_Model(nn.Module):
 ## 2 动手改进模型
 在理解基础代码后（其实是一个略微艰难的事 万事开头难），我开始尝试改进模型
 
-###　2.1 加宽加深 + Batch Normalization
+### 2.1 加宽加深 + Batch Normalization
 为了提升模型能力，我决定把网络加深加宽，改成 64→32→16→1 的结构，并引入 Batch Normalization（BN）：
 
 BN 的作用是让每一层的输入分布稳定，加速收敛，还能起到轻微的正则化效果。
@@ -88,7 +88,7 @@ class MyModel(nn.Module):
         return self.layers(x).squeeze() 
 ```
 
-###　2.2 切换优化器与调整学习率
+### 2.2 切换优化器与调整学习率
 demo 使用 SGD 优化器，学习率设为 1e-5 以保证稳定性。我尝试改用 Adam 优化器，并大幅提升学习率，结果令人惊喜。
 
 ~~~python

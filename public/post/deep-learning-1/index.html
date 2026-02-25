@@ -210,7 +210,12 @@
         <li><a href="#12-理解深度学习代码框架">1.2 理解深度学习代码框架：</a></li>
       </ul>
     </li>
-    <li><a href="#2-动手改进模型">2 动手改进模型</a></li>
+    <li><a href="#2-动手改进模型">2 动手改进模型</a>
+      <ul>
+        <li><a href="#21-加宽加深--batch-normalization">2.1 加宽加深 + Batch Normalization</a></li>
+        <li><a href="#22-切换优化器与调整学习率">2.2 切换优化器与调整学习率</a></li>
+      </ul>
+    </li>
     <li><a href="#3-实验对比与结果">3. 实验对比与结果</a></li>
     <li><a href="#4-总结与收获">4. 总结与收获</a></li>
   </ul>
@@ -356,8 +361,10 @@
 <a class="header-anchor" href="#2-%e5%8a%a8%e6%89%8b%e6%94%b9%e8%bf%9b%e6%a8%a1%e5%9e%8b"></a>
 2 动手改进模型
 </h2><p>在理解基础代码后（其实是一个略微艰难的事 万事开头难），我开始尝试改进模型</p>
-<p>###　2.1 加宽加深 + Batch Normalization
-为了提升模型能力，我决定把网络加深加宽，改成 64→32→16→1 的结构，并引入 Batch Normalization（BN）：</p>
+<h3 id="21-加宽加深--batch-normalization">
+<a class="header-anchor" href="#21-%e5%8a%a0%e5%ae%bd%e5%8a%a0%e6%b7%b1--batch-normalization"></a>
+2.1 加宽加深 + Batch Normalization
+</h3><p>为了提升模型能力，我决定把网络加深加宽，改成 64→32→16→1 的结构，并引入 Batch Normalization（BN）：</p>
 <p>BN 的作用是让每一层的输入分布稳定，加速收敛，还能起到轻微的正则化效果。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">MyModel</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">):</span>
@@ -377,8 +384,10 @@
 </span></span><span class="line"><span class="cl">    
 </span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
 </span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">layers</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">squeeze</span><span class="p">()</span> 
-</span></span></code></pre></div><p>###　2.2 切换优化器与调整学习率
-demo 使用 SGD 优化器，学习率设为 1e-5 以保证稳定性。我尝试改用 Adam 优化器，并大幅提升学习率，结果令人惊喜。</p>
+</span></span></code></pre></div><h3 id="22-切换优化器与调整学习率">
+<a class="header-anchor" href="#22-%e5%88%87%e6%8d%a2%e4%bc%98%e5%8c%96%e5%99%a8%e4%b8%8e%e8%b0%83%e6%95%b4%e5%ad%a6%e4%b9%a0%e7%8e%87"></a>
+2.2 切换优化器与调整学习率
+</h3><p>demo 使用 SGD 优化器，学习率设为 1e-5 以保证稳定性。我尝试改用 Adam 优化器，并大幅提升学习率，结果令人惊喜。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">SGD</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;learning_rate&#39;</span><span class="p">],</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.9</span><span class="p">)</span> 
 </span></span></code></pre></div><p>(momentum为动量 更好进行梯度下降)</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">optimizer</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="n">config</span><span class="p">[</span><span class="s1">&#39;learning_rate&#39;</span><span class="p">])</span>
@@ -863,7 +872,7 @@ demo</p>
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;655</span
+          >&nbsp;653</span
         >
         &nbsp;|&nbsp;
         <span class="icon-coffee">&nbsp;00:06</span>
@@ -898,7 +907,12 @@ demo</p>
         <li><a href="#12-理解深度学习代码框架">1.2 理解深度学习代码框架：</a></li>
       </ul>
     </li>
-    <li><a href="#2-动手改进模型">2 动手改进模型</a></li>
+    <li><a href="#2-动手改进模型">2 动手改进模型</a>
+      <ul>
+        <li><a href="#21-加宽加深--batch-normalization">2.1 加宽加深 + Batch Normalization</a></li>
+        <li><a href="#22-切换优化器与调整学习率">2.2 切换优化器与调整学习率</a></li>
+      </ul>
+    </li>
     <li><a href="#3-实验对比与结果">3. 实验对比与结果</a></li>
     <li><a href="#4-总结与收获">4. 总结与收获</a></li>
   </ul>
