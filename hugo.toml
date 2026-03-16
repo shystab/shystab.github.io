@@ -19,4 +19,7 @@ weight = 4
 [markup.highlight]
 guessSyntax = true
 noClasses = false
-
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

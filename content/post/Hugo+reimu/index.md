@@ -22,7 +22,7 @@ outdated: false
 sponsor: false
 
 keywords: ["Hugo", "Reimu主题", "博客搭建", "静态网站"]
-weight: 1
+
 ---
 
 ## 前言：为什么想搭建博客

@@ -732,3 +732,7 @@ internal_theme:
     --highlight-deletion-bg: "#490202"
     --highlight-addition: "#7ee787"
     --highlight-addition-bg: "#04260f"
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

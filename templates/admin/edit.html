@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}编辑文章《{{ article.title }}》{% endblock %}
+
+{% block content %}
+<h1>✏️ 编辑文章</h1>
+<form method="POST">
+    <p>
+        <label for="title">文章标题：</label><br>
+        <!-- 关键：value 属性用于预填输入框 -->
+        <input type="text" id="title" name="title" value="{{ article.title }}" size="60" required>
+    </p>
+    <p>
+        <label for="content">文章内容：</label><br>
+        <!-- 关键：<textarea>的预填内容在两个标签之间 -->
+        <textarea id="content" name="content" rows="15" cols="80" required>{{ article.content }}</textarea>
+    </p>
+    <p>
+        <button type="submit">保存修改</button>
+        <a href="{{ url_for('index') }}" style="margin-left: 20px;">返回首页</a>
+    </p>
+</form>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}发布新文章{% endblock %}
+
+{% block content %}
+<h1>📝 发布新文章</h1>
+<form method="POST">
+    <p>
+        <label for="title">文章标题：</label><br>
+        <input type="text" id="title" name="title" size="60" required>
+    </p>
+    <p>
+        <label for="content">文章内容：</label><br>
+        <textarea id="content" name="content" rows="15" cols="80" required></textarea>
+    </p>
+    <p>
+        <button type="submit">立即发布</button>
+        <a href="{{ url_for('index') }}" style="margin-left: 20px;">返回首页</a>
+    </p>
+</form>
+{% endblock %}

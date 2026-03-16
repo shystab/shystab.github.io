@@ -1,0 +1,13 @@
+blinker==1.9.0
+click==8.3.1
+colorama==0.4.6
+-e git+https://github.com/pallets/flask.git@798e006f435887adceb6aab9b57cde8e20276793#egg=Flask
+Flask-SQLAlchemy==3.1.1
+greenlet==3.3.1
+itsdangerous==2.2.0
+Jinja2==3.1.6
+MarkupSafe==3.0.3
+packaging @ file:///C:/miniconda3/conda-bld/packaging_1761049096285/work
+SQLAlchemy==2.0.46
+typing_extensions==4.15.0
+Werkzeug==3.1.5

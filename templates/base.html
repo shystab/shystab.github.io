@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}我的博客{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">🏠 首页</a> |
+        <a href="{{ url_for('new_article') }}">✏️ 写文章</a>
+        <!-- 【新增】根据登录状态动态显示 -->
+        <span style="float: right;">
+            {% if current_user.is_authenticated %}
+                你好，<strong>{{ current_user.username }}</strong> |
+                <a href="{{ url_for('logout') }}">退出</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">登录</a> |
+                <a href="{{ url_for('register') }}">注册</a>
+            {% endif %}
+        </span>
+    </nav>
+    <hr>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div style="background-color: #f8d7da; color: #721c24; padding: 10px; margin: 10px 0; border: 1px solid #f5c6cb; border-radius: 5px;">
+          {% for message in messages %}
+            <p style="margin:0;">{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

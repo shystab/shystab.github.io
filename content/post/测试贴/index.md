@@ -2,6 +2,7 @@
 title: 'test post'
 date: 2026-02-04
 cover: /images/first.jpg
+categories: ["TEST"]
 ---
 
 ##测试贴 hiahia
@@ -22,8 +23,8 @@ cover: /images/first.jpg
 {{< /details >}}
 
 {{< gallery >}}
-![站内头像](a.jpg)
-![虹夏](b.jpg)
+![虹夏](a.jpg)
+![站内头像](b.jpg)
 {{< /gallery >}}
 
 {{< alertBlockquote type="warning" >}}

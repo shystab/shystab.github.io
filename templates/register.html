@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}用户注册{% endblock %}
+
+{% block content %}
+<h1>📝 用户注册</h1>
+
+<!-- 显示Flash消息（如用户名已存在等错误） -->
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <div style="background-color: #f8d7da; color: #721c24; padding: 10px; margin: 10px 0; border: 1px solid #f5c6cb; border-radius: 5px;">
+      {% for message in messages %}
+        <p style="margin:0;">{{ message }}</p>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+
+<form method="POST" action="{{ url_for('register') }}">
+    <p>
+        <label for="username">用户名：</label><br>
+        <input type="text" id="username" name="username" required>
+    </p>
+    <p>
+        <label for="email">邮箱：</label><br>
+        <input type="email" id="email" name="email" required>
+    </p>
+    <p>
+        <label for="password">密码：</label><br>
+        <input type="password" id="password" name="password" required>
+    </p>
+    <p>
+        <label for="password2">确认密码：</label><br>
+        <input type="password" id="password2" name="password2" required>
+    </p>
+    <p>
+        <button type="submit">立即注册</button>
+        <a href="{{ url_for('index') }}" style="margin-left: 20px;">返回首页</a>
+        或 <a href="{{ url_for('login') }}">已有账号？去登录</a>
+    </p>
+</form>
+{% endblock %}
