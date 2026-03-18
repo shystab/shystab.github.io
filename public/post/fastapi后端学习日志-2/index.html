@@ -8,9 +8,10 @@
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
 /><title>
-  标签 | Shysta
+  fastapi后端学习记录-2 | Shysta
 </title>
-<meta name="description" content="二次元死开！"/><script>
+<meta name="description" content="本文记录后端的一些学习历程"/>
+    <meta name="keywords" content="Fastapi, 全栈" /><script>
   window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"http://localhost:1313/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"i18n_languages\":[{\"Lang\":\"zh-cn\",\"LanguageName\":\"简体中文\",\"LanguageCode\":\"\",\"Title\":\"\",\"LanguageDirection\":\"\",\"Weight\":1,\"Disabled\":false},{\"Lang\":\"zh-tw\",\"LanguageName\":\"簡體中文\",\"LanguageCode\":\"\",\"Title\":\"\",\"LanguageDirection\":\"\",\"Weight\":2,\"Disabled\":false},{\"Lang\":\"en\",\"LanguageName\":\"English\",\"LanguageCode\":\"\",\"Title\":\"\",\"LanguageDirection\":\"\",\"Weight\":3,\"Disabled\":false},{\"Lang\":\"ja\",\"LanguageName\":\"日本語\",\"LanguageCode\":\"\",\"Title\":\"\",\"LanguageDirection\":\"\",\"Weight\":4,\"Disabled\":false}],\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":true,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
   
   window.siteConfig.swPath = '\/sw.js';
@@ -35,24 +36,24 @@
     type="font/woff2"
     crossorigin="anonymous"
   /><link rel="stylesheet" href="/css/loader.css" /><meta property="og:type" content="website" />
-  <meta property="og:title" content="标签 | Shysta" />
+  <meta property="og:title" content="fastapi后端学习记录-2 | Shysta" />
   <meta
     property="og:description"
-    content="二次元死开！"
+    content="本文记录后端的一些学习历程"
   />
-  <meta property="og:url" content="http://localhost:1313/tags/" />
+  <meta property="og:url" content="http://localhost:1313/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-2/" />
   <meta
     property="og:site_name"
     content="Shystab"
   />
   <meta
     property="og:image"
-    content="/"
+    content="/images/sixth.jpg"
   />
   <meta property="article:author" content="Shysta" />
-  <meta property="article:published_time" content="2026-03-18T23:30:00&#43;08:00" />
-  <meta property="article:modified_time" content="2026-03-18T23:30:00&#43;08:00" /><meta name="twitter:card" content="summary" />
-  <meta name="twitter:image" content="/" /><link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/index.xml" title="Shystab">
+  <meta property="article:published_time" content="2026-03-17T23:30:00&#43;08:00" />
+  <meta property="article:modified_time" content="2026-03-17T23:30:00&#43;08:00" /><meta property="article:tag" content="Fastapi全栈后端" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/images/sixth.jpg" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.css" /><link
     rel="preload"
     as="style"
@@ -136,7 +137,7 @@
       </a><a class="main-nav-link-wrap" href="/friend"><div class='main-nav-icon icon '>&#xe63d;</div><span class="main-nav-link">友链</span>
       </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
   </nav>
-  <nav id="sub-nav" aria-label="Secondary navigation"><a id="nav-rss-link" class="nav-icon" href="/tags/index.xml" title="RSS 订阅" aria-label="RSS 订阅" target="_blank"></a></nav><nav id="i18n-nav" aria-label="Language selection">
+  <nav id="sub-nav" aria-label="Secondary navigation"></nav><nav id="i18n-nav" aria-label="Language selection">
       <div class="custom-dropdown">
         <div class="select-selected" id="select-selected" role="button" aria-haspopup="listbox" aria-expanded="false" aria-label="Language menu">
           <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
@@ -158,7 +159,7 @@
 
         selectOptions.forEach((item) => {
           item.addEventListener("click", () => {
-            const langMap = {};langMap['zh-tw'] = '\/zh-tw\/tags\/';langMap['en'] = '\/en\/tags\/';langMap['ja'] = '\/ja\/tags\/';selectedLang.textContent = item.textContent;
+            const langMap = {};selectedLang.textContent = item.textContent;
             selectItems.classList.remove("show");
             selectOptions.forEach((option) => {
               option.classList.remove("selected");
@@ -186,19 +187,45 @@
         });
       </script>
     </nav></div>
-<header id="header" aria-label="Site header"><picture><source media="(max-width: 479px)" srcset="/images/banner-3.webp"><source media="(max-width: 799px)" srcset="/images/banner-2.webp"><source media="(min-width: 800px)" srcset="/images/banner-1.webp"><img crossorigin="anonymous" fetchpriority="high" src="/images/banner-1.webp" alt="Tags"></picture><img alt="Tags" style="visibility: hidden;"><div id="header-outer">
+<header id="header" aria-label="Site header"><picture></picture>
+    <img crossorigin="anonymous" fetchpriority="high" src="/images/sixth.jpg" alt="fastapi后端学习记录-2"><div id="header-outer">
     <div id="header-title"><span id="logo">
-            <h1 data-aos="slide-up">标签</h1>
-          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+            <h1 data-aos="slide-up">fastapi后端学习记录-2</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"><span id="subtitle">后端学习日志</span></h2></div>
   </div>
 </header><div id="content"
           aria-label="Page content"
           class="sidebar-left"
-            ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container "><div class="sidebar-wrapper">
+            ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
     <div
       class="sidebar-wrap"
       data-aos="fade-up"
-    ><div class="sidebar-author">
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#框架基石与开发环境">框架基石与开发环境</a>
+      <ul>
+        <li><a href="#路径操作装饰器">路径操作装饰器</a></li>
+        <li><a href="#类型提示-type-hints">类型提示 (Type Hints)</a></li>
+      </ul>
+    </li>
+    <li><a href="#请求处理-request-handling">请求处理 (Request Handling)</a>
+      <ul>
+        <li><a href="#路径操作与参数-路径参数-查询参数">路径操作与参数： 路径参数 查询参数</a></li>
+        <li><a href="#请求体">请求体</a></li>
+      </ul>
+    </li>
+    <li><a href="#响应处理">响应处理</a>
+      <ul>
+        <li><a href="#返回任意数据">返回任意数据</a></li>
+      </ul>
+    </li>
+    <li><a href="#pydantic模型">pydantic模型</a></li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img
     data-src="/avatar/avatar.webp"
     data-sizes="auto"
@@ -263,488 +290,282 @@
         href="/friend"
         aria-label="友链"
       ></a><div class='sidebar-menu-icon icon '>&#xe63d;</div><div class="sidebar-menu-link">友链</div>
-    </div></div></div>
-  </div><div class="sidebar-widget"><div class="widget-wrapper">
-    <div
-      class="widget-wrap"
-      data-aos="fade-up"
-    >
-      <div style="display: flex; justify-content: space-between;">
-        <h3 class="widget-title">分类</h3></div>
-      <div class="widget">
-        <ul class="category-list"><li class="category-list-item">
-                <a class="category-list-link" href="/categories/test/" 
-                  title="TEST"
-                  >TEST</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/" 
-                  title="学习"
-                  >学习</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/" 
-                  title="技术实践"
-                  >技术实践</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E6%95%99%E7%A8%8B/" 
-                  title="教程"
-                  >教程</a
-                >
-              </li><li class="category-list-item">
-                <a class="category-list-link" href="/categories/%E8%AE%B0%E5%BD%95/" 
-                  title="记录"
-                  >记录</a
-                >
-              </li></ul>
-      </div>
-    </div>
-  </div><div class="widget-wrapper">
-    <div
-      class="widget-wrap"
-      data-aos="fade-up"
-    >
-      <div style="display: flex; justify-content: space-between;">
-        <h3 class="widget-title">标签</h3><a class="widget-link" href="/tags/">查看更多</a></div>
-      <div class="widget">
-        <ul class="tag-list" itemprop="keywords"><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/deep-learning/"
-                  aria-label="标签: Deep Learning"
-                  title="Deep Learning"
-                >
-                  Deep Learning
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/fastapi/"
-                  aria-label="标签: Fastapi"
-                  title="Fastapi"
-                >
-                  Fastapi
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/github-pages/"
-                  aria-label="标签: GitHub Pages"
-                  title="GitHub Pages"
-                >
-                  GitHub Pages
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/hugo/"
-                  aria-label="标签: Hugo"
-                  title="Hugo"
-                >
-                  Hugo
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/hw/"
-                  aria-label="标签: HW"
-                  title="HW"
-                >
-                  HW
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/mechine-learning/"
-                  aria-label="标签: Mechine Learning"
-                  title="Mechine Learning"
-                >
-                  Mechine Learning
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/plan/"
-                  aria-label="标签: Plan"
-                  title="Plan"
-                >
-                  Plan
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/reimu/"
-                  aria-label="标签: Reimu"
-                  title="Reimu"
-                >
-                  Reimu
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/school-day/"
-                  aria-label="标签: School Day"
-                  title="School Day"
-                >
-                  School Day
-                </a>
-              </li><li class="tag-item">
-                <a
-                  class="tag-link"
-                  href="/tags/%E4%B8%BB%E9%A2%98/"
-                  aria-label="标签: 主题"
-                  title="主题"
-                >
-                  主题
-                </a>
-              </li></ul>
-      </div>
-    </div>
-  </div><div class="widget-wrapper">
+    </div></div></div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
   <div
-    class="widget-wrap"
+    class="article-inner"
     data-aos="fade-up"
   >
-    <h3 class="widget-title">标签云</h3><div class="widget tagcloud"><a
-            style="font-size:10px"
-            href="/tags/deep-learning/"
-            aria-label="标签: Deep Learning"
-            >Deep Learning</a
-          ><a
-            style="font-size:10px"
-            href="/tags/fastapi/"
-            aria-label="标签: Fastapi"
-            >Fastapi</a
-          ><a
-            style="font-size:10px"
-            href="/tags/github-pages/"
-            aria-label="标签: GitHub Pages"
-            >GitHub Pages</a
-          ><a
-            style="font-size:10px"
-            href="/tags/hugo/"
-            aria-label="标签: Hugo"
-            >Hugo</a
-          ><a
-            style="font-size:10px"
-            href="/tags/hw/"
-            aria-label="标签: HW"
-            >HW</a
-          ><a
-            style="font-size:10px"
-            href="/tags/mechine-learning/"
-            aria-label="标签: Mechine Learning"
-            >Mechine Learning</a
-          ><a
-            style="font-size:10px"
-            href="/tags/plan/"
-            aria-label="标签: Plan"
-            >Plan</a
-          ><a
-            style="font-size:10px"
-            href="/tags/reimu/"
-            aria-label="标签: Reimu"
-            >Reimu</a
-          ><a
-            style="font-size:10px"
-            href="/tags/school-day/"
-            aria-label="标签: School Day"
-            >School Day</a
-          ><a
-            style="font-size:10px"
-            href="/tags/%E4%B8%BB%E9%A2%98/"
-            aria-label="标签: 主题"
-            >主题</a
-          ><a
-            style="font-size:10px"
-            href="/tags/%E5%85%A8%E6%A0%88/"
-            aria-label="标签: 全栈"
-            >全栈</a
-          ><a
-            style="font-size:10px"
-            href="/tags/%E5%8D%9A%E5%AE%A2/"
-            aria-label="标签: 博客"
-            >博客</a
-          ><a
-            style="font-size:10px"
-            href="/tags/%E5%90%8E%E7%AB%AF/"
-            aria-label="标签: 后端"
-            >后端</a
-          ><a
-            style="font-size:10px"
-            href="/tags/%E5%AF%92%E5%81%87/"
-            aria-label="标签: 寒假"
-            >寒假</a
-          ><a
-            style="font-size:10px"
-            href="/tags/%E5%BF%83%E5%BE%97/"
-            aria-label="标签: 心得"
-            >心得</a
-          ><a
-            style="font-size:10px"
-            href="/tags/%E6%B3%A5%E8%BD%A6/"
-            aria-label="标签: 泥车"
-            >泥车</a
-          ><a
-            style="font-size:10px"
-            href="/tags/%E6%B5%8B%E8%AF%95/"
-            aria-label="标签: 测试"
-            >测试</a
-          ></div>
-  </div>
-</div><div class="widget-wrapper">
-    <div
-      class="widget-wrap"
-      data-aos="fade-up"
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2026-03-17 23:30:00 &#43;0800 CST" itemprop="datePublished"
+      >2026-03-17</time
     >
-      <h3 class="widget-title">最新文章</h3>
-      <div class="widget">
-        <ul><li>
-              <a href="/post/schoolday-two-weeks/" title="开学日 2/16">开学日 2/16</a>
-            </li><li>
-              <a href="/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-3/" title="fastapi后端学习记录-3">fastapi后端学习记录-3</a>
-            </li><li>
-              <a href="/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-2/" title="fastapi后端学习记录-2">fastapi后端学习记录-2</a>
-            </li><li>
-              <a href="/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-1/" title="fastapi后端学习记录-1">fastapi后端学习记录-1</a>
-            </li><li>
-              <a href="/post/deep-learning-2/" title="DL hw-2音素识别 李宏毅作业学习">DL hw-2音素识别 李宏毅作业学习</a>
-            </li></ul>
-      </div>
-    </div>
-  </div></div></div></aside>
-<section id="main" aria-label="Main content"><div
-    class="archives-outer-wrap"
+    <time style="display: none;" id="post-update-time"
+      >2026-03-17</time
+    >
+  </span></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="fastapi内容">
+<a class="header-anchor" href="#fastapi%e5%86%85%e5%ae%b9"></a>
+Fastapi内容
+</h1><h2 id="框架基石与开发环境">
+<a class="header-anchor" href="#%e6%a1%86%e6%9e%b6%e5%9f%ba%e7%9f%b3%e4%b8%8e%e5%bc%80%e5%8f%91%e7%8e%af%e5%a2%83"></a>
+框架基石与开发环境
+</h2><p>首先是贴一个官网 以及看文档真的看得我很痛苦
+<a href="https://fastapi.tiangolo.com/zh/">fast官方网站</a></p>
+<p>目前官方推荐安装模式</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># 官方推荐的标准安装（一步到位）</span>
+</span></span><span class="line"><span class="cl"><span class="n">pip</span> <span class="n">install</span> <span class="s2">&#34;fastapi[standard]&#34;</span>
+</span></span></code></pre></div><p>虽然我一开始不是这样安装的嘻嘻</p>
+<h3 id="路径操作装饰器">
+<a class="header-anchor" href="#%e8%b7%af%e5%be%84%e6%93%8d%e4%bd%9c%e8%a3%85%e9%a5%b0%e5%99%a8"></a>
+路径操作装饰器
+</h3><p>路由是一种将请求方法+url路径 链接到对应处理函数的映射关系</p>
+<ul>
+<li>路径：指 URL 中的路径部分，比如 /users、/items/42。</li>
+<li>操作：指 HTTP 方法（操作），比如 GET、POST、PUT、DELETE 等。</li>
+<li>装饰器：Python 的一种语法，用于在定义函数时给函数附加额外功能（用 @ 符号）。</li>
+</ul>
+<p><strong>路径操作装饰器的作用是：</strong>
+把一个普通的 Python 函数，与一个特定的 HTTP 方法和 URL 路径绑定在一起，告诉 FastAPI：“当用户请求这个路径、使用这个 HTTP 方法时，就自动调用这个函数来处理，并把函数的返回值返回给客户端。</p>
+<p><strong>@app.get(&quot;/&quot;)</strong></p>
+<ul>
+<li>@app.	@app.	固定前缀，表示这是 FastAPI 应用实例的方法</li>
+<li>HTTP 方法	get、post 等	指定要处理的 HTTP 方法</li>
+<li>路径	&ldquo;/&quot;、&quot;/items/{item_id}&rdquo;	URL 路径，可以包含参数占位符（如 {item_id}）</li>
+<li>其他参数	response_model, status_code	可选，用于控制响应格式、状态码、标签、文档描述等（写在括号内）</li>
+</ul>
+<h3 id="类型提示-type-hints">
+<a class="header-anchor" href="#%e7%b1%bb%e5%9e%8b%e6%8f%90%e7%a4%ba-type-hints"></a>
+类型提示 (Type Hints)
+</h3><p>annonated作为python3.9新提出的 官方推荐作为新写法替换以往内容
+bool | None = None则是3.10用于替换optional的</p>
+<h2 id="请求处理-request-handling">
+<a class="header-anchor" href="#%e8%af%b7%e6%b1%82%e5%a4%84%e7%90%86-request-handling"></a>
+请求处理 (Request Handling)
+</h2><table>
+  <thead>
+      <tr>
+          <th style="text-align: left">参数类型</th>
+          <th style="text-align: left">数据来源</th>
+          <th style="text-align: left">主要用途</th>
+          <th style="text-align: left">FastAPI 声明方式</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">路径参数</td>
+          <td style="text-align: left">URL 路径中（如 <code>/users/42</code>）</td>
+          <td style="text-align: left">资源标识（ID）</td>
+          <td style="text-align: left">函数参数同名</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">查询参数</td>
+          <td style="text-align: left">URL <code>?</code> 之后（如 <code>?page=2</code>）</td>
+          <td style="text-align: left">过滤、分页、排序</td>
+          <td style="text-align: left">函数参数默认值</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">请求体</td>
+          <td style="text-align: left">HTTP 报文 body（JSON）</td>
+          <td style="text-align: left">提交创建/更新数据</td>
+          <td style="text-align: left">Pydantic 模型</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">请求头</td>
+          <td style="text-align: left">HTTP 头部</td>
+          <td style="text-align: left">认证、客户端信息</td>
+          <td style="text-align: left"><code>Header()</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Cookie</td>
+          <td style="text-align: left">请求头中的 <code>Cookie</code> 字段</td>
+          <td style="text-align: left">会话管理</td>
+          <td style="text-align: left"><code>Cookie()</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">表单数据</td>
+          <td style="text-align: left"><code>application/x-www-form-urlencoded</code></td>
+          <td style="text-align: left">传统表单提交</td>
+          <td style="text-align: left"><code>Form()</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">文件上传</td>
+          <td style="text-align: left"><code>multipart/form-data</code></td>
+          <td style="text-align: left">上传文件</td>
+          <td style="text-align: left"><code>File()</code> / <code>UploadFile</code></td>
+      </tr>
+  </tbody>
+</table>
+<p>请求参数的内容 比如路径参数 请求参数都可作为处理函数的参数 分别起到索引和筛选等功能</p>
+<h3 id="路径操作与参数-路径参数-查询参数">
+<a class="header-anchor" href="#%e8%b7%af%e5%be%84%e6%93%8d%e4%bd%9c%e4%b8%8e%e5%8f%82%e6%95%b0-%e8%b7%af%e5%be%84%e5%8f%82%e6%95%b0-%e6%9f%a5%e8%af%a2%e5%8f%82%e6%95%b0"></a>
+路径操作与参数： 路径参数 查询参数
+</h3><p>路径参数：从 URL 路径中捕获参数，使用 Python 类型提示声明类型（也就是说和路劲中一样 变量名也就在路径里）
+查询参数：作为URL 中 ? 之后的部分，函数中未在路径中声明的参数会自动解释为查询参数。</p>
+<blockquote>
+<p>我可以随意混搭
+路径参数和查询参数可以同时存在
+而path 和query参数作为其参数声明函数</p>
+</blockquote>
+<h3 id="请求体">
+<a class="header-anchor" href="#%e8%af%b7%e6%b1%82%e4%bd%93"></a>
+请求体
+</h3><p>就是用sqlmodel或者Pydantic 模型定义请求体的数据结构
+这样可以传更多的数据 并且有集成的类型校验</p>
+<p><code>Field</code> 是 Pydantic 提供的字段函数，用于为模型字段添加额外的验证、元数据、默认值等。它通常用在 Pydantic 模型的属性上。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span><span class="p">,</span> <span class="n">Field</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Item</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&#34;物品名称&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">price</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">gt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">le</span><span class="o">=</span><span class="mi">10000</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&#34;价格必须在0到10000之间&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tax</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="n">Field</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="n">ge</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">description</span><span class="o">=</span><span class="s2">&#34;税率（可选）&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><p>###　请求头（Header） Cookie 参数</p>
+<p>header从请求头中提取数据，常用于获取 User-Agent、Authorization 等。
+cookie从请求头的 Cookie 字段中提取特定 Cookie 值。</p>
+<p>表单和文件不谈 表单太老了 不用了</p>
+<h2 id="响应处理">
+<a class="header-anchor" href="#%e5%93%8d%e5%ba%94%e5%a4%84%e7%90%86"></a>
+响应处理
+</h2><h3 id="返回任意数据">
+<a class="header-anchor" href="#%e8%bf%94%e5%9b%9e%e4%bb%bb%e6%84%8f%e6%95%b0%e6%8d%ae"></a>
+返回任意数据
+</h3><p>python的优良性质 返回字典等内容很方便
+可以直接返回 dict、list、Pydantic 模型，FastAPI 会自动转换为 JSON。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="nd">@app.get</span><span class="p">(</span><span class="s2">&#34;/hello&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">async</span> <span class="k">def</span> <span class="nf">hello</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">   <span class="k">return</span> <span class="p">{</span><span class="s2">&#34;msg&#34;</span><span class="p">:</span> <span class="s2">&#34;hello&#34;</span><span class="p">}</span>   <span class="c1"># 自动 JSON 化</span>
+</span></span></code></pre></div><p>也可使用 response_model 指定响应模型
+用于过滤输出字段、保证响应格式一致。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pydantic</span> <span class="kn">import</span> <span class="n">BaseModel</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">ItemOut</span><span class="p">(</span><span class="n">BaseModel</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+</span></span><span class="line"><span class="cl">    <span class="n">price</span><span class="p">:</span> <span class="nb">float</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nd">@app.post</span><span class="p">(</span><span class="s2">&#34;/items/&#34;</span><span class="p">,</span> <span class="n">response_model</span><span class="o">=</span><span class="n">ItemOut</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">async</span> <span class="k">def</span> <span class="nf">create_item</span><span class="p">(</span><span class="n">item</span><span class="p">:</span> <span class="n">Item</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">item</span>   <span class="c1"># 只返回 name 和 price，忽略其他字段</span>
+</span></span><span class="line"><span class="cl"><span class="n">response_model</span> <span class="n">可以控制输出中哪些字段被包含</span><span class="err">，</span><span class="n">并执行响应验证</span><span class="err">。</span>
+</span></span></code></pre></div><h2 id="pydantic模型">
+<a class="header-anchor" href="#pydantic%e6%a8%a1%e5%9e%8b"></a>
+pydantic模型
+</h2><p><a href="https://pydantic.com.cn/">官方文档</a></p>
+<p>后话 目前对field path query body之类的内容理解更好了点 都只是对参数的额外补充。</p>
+</div>
+    <footer class="article-footer"><blockquote class="article-copyright"><p><strong><span class="icon-user icon"></span>本文作者：</strong>Shysta</p><p>
+      <strong><span class="icon-link icon"></span>本文链接：</strong><a href="http://localhost:1313/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-2/">http://localhost:1313/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-2/</a>
+    </p><p>
+      
+      <strong><span class="icon-copyright icon"></span>本文版权：</strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener nofollow noreferrer" target="_blank"><span class="icon-creative-commons"></span>BY-NC-SA</a> 许可协议。转载请注明出处！
+    </p>
+    <span class="icon-creative-commons article-copyright-bg"></span></blockquote>
+<div class="share-wrapper"><a href="https://service.weibo.com/share/share.php?url=http://localhost:1313/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-2/&amp;appkey=&amp;title=fastapi%e5%90%8e%e7%ab%af%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95-2&amp;pic=&amp;ralateUid=" target="_blank" rel="noopener noreferrer" title="fastapi后端学习记录-2">
+      <div class="share-icon icon icon-weibo"></div>
+    </a><a href="https://connect.qq.com/widget/shareqq/index.html?url=http://localhost:1313/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-2/&amp;title=fastapi%e5%90%8e%e7%ab%af%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95-2&amp;desc=%e6%9c%ac%e6%96%87%e8%ae%b0%e5%bd%95%e5%90%8e%e7%ab%af%e7%9a%84%e4%b8%80%e4%ba%9b%e5%ad%a6%e4%b9%a0%e5%8e%86%e7%a8%8b&amp;source=http://localhost:1313/" target="_blank" rel="noopener noreferrer" title="fastapi后端学习记录-2">
+      <div class="share-icon icon icon-qq"></div>
+    </a><a href="javascript:;"  title="fastapi后端学习记录-2">
+      <div class="share-icon icon icon-weixin"><div id="share-weixin">
+            <div class="share-weixin-dom">
+              <div class="share-weixin-content">
+                <img id="share-weixin-banner"> 
+                <div id="share-weixin-title"></div>
+                <div id="share-weixin-desc"></div>
+              </div>
+              <div class="share-weixin-qrcode">
+                <div class="share-weixin-info">
+                  <div id="share-weixin-author"></div>
+                  <div id="share-weixin-theme">Powered By hugo-theme-reimu</div>
+                </div>
+                <img id="share-weixin-qr" >
+              </div>
+            </div>
+            <div class="share-weixin-canvas"></div>
+          </div></div>
+    </a></div><ul class="article-category-list"><li class="article-tag-list-item" data-aos="zoom-in">
+    <a
+      class="article-category-link"
+      href="/categories/%e5%ad%a6%e4%b9%a0"
+      data-aos="zoom-in"
+      >学习</a
+    >
+    </li></ul>
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/fastapi"
+        rel="tag"
+        >Fastapi</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/%e5%85%a8%e6%a0%88"
+        rel="tag"
+        >全栈</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/%e5%90%8e%e7%ab%af"
+        rel="tag"
+        >后端</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
     data-aos="fade-up"
-  >
-    <div
-      class="
-        tag-wrap
-      "
-    ><div
-          class="
-            archives-tag-list-item
-          "
-          data-aos="zoom-in"
-        >
-          <a
-            class="
-              archives-tag-list-link
-            "
-            href="/tags/fastapi/"
-            >Fastapi</a
-          >
-        </div><div
-          class="
-            archives-tag-list-item
-          "
-          data-aos="zoom-in"
-        >
-          <a
-            class="
-              archives-tag-list-link
-            "
-            href="/tags/%E5%90%8E%E7%AB%AF/"
-            >后端</a
-          >
-        </div><div
-          class="
-            archives-tag-list-item
-          "
-          data-aos="zoom-in"
-        >
-          <a
-            class="
-              archives-tag-list-link
-            "
-            href="/tags/%E5%85%A8%E6%A0%88/"
-            >全栈</a
-          >
-        </div><div
-          class="
-            archives-tag-list-item
-          "
-          data-aos="zoom-in"
-        >
-          <a
-            class="
-              archives-tag-list-link
-            "
-            href="/tags/plan/"
-            >Plan</a
-          >
-        </div><div
-          class="
-            archives-tag-list-item
-          "
-          data-aos="zoom-in"
-        >
-          <a
-            class="
-              archives-tag-list-link
-            "
-            href="/tags/school-day/"
-            >School Day</a
-          >
-        </div><div
-          class="
-            archives-tag-list-item
-          "
-          data-aos="zoom-in"
-        >
-          <a
-            class="
-              archives-tag-list-link
-            "
-            href="/tags/%E6%B3%A5%E8%BD%A6/"
-            >泥车</a
-          >
-        </div><div
-          class="
-            archives-tag-list-item
-          "
-          data-aos="zoom-in"
-        >
-          <a
-            class="
-              archives-tag-list-link
-            "
-            href="/tags/deep-learning/"
-            >Deep Learning</a
-          >
-        </div><div
-          class="
-            archives-tag-list-item
-          "
-          data-aos="zoom-in"
-        >
-          <a
-            class="
-              archives-tag-list-link
-            "
-            href="/tags/hw/"
-            >HW</a
-          >
-        </div><div
-          class="
-            archives-tag-list-item
-          "
-          data-aos="zoom-in"
-        >
-          <a
-            class="
-              archives-tag-list-link
-            "
-            href="/tags/mechine-learning/"
-            >Mechine Learning</a
-          >
-        </div><div
-          class="
-            archives-tag-list-item
-          "
-          data-aos="zoom-in"
-        >
-          <a
-            class="
-              archives-tag-list-link
-            "
-            href="/tags/%E5%AF%92%E5%81%87/"
-            >寒假</a
-          >
-        </div><div
-          class="
-            archives-tag-list-item
-          "
-          data-aos="zoom-in"
-        >
-          <a
-            class="
-              archives-tag-list-link
-            "
-            href="/tags/github-pages/"
-            >GitHub Pages</a
-          >
-        </div><div
-          class="
-            archives-tag-list-item
-          "
-          data-aos="zoom-in"
-        >
-          <a
-            class="
-              archives-tag-list-link
-            "
-            href="/tags/hugo/"
-            >Hugo</a
-          >
-        </div><div
-          class="
-            archives-tag-list-item
-          "
-          data-aos="zoom-in"
-        >
-          <a
-            class="
-              archives-tag-list-link
-            "
-            href="/tags/reimu/"
-            >Reimu</a
-          >
-        </div><div
-          class="
-            archives-tag-list-item
-          "
-          data-aos="zoom-in"
-        >
-          <a
-            class="
-              archives-tag-list-link
-            "
-            href="/tags/%E5%8D%9A%E5%AE%A2/"
-            >博客</a
-          >
-        </div><div
-          class="
-            archives-tag-list-item
-          "
-          data-aos="zoom-in"
-        >
-          <a
-            class="
-              archives-tag-list-link
-            "
-            href="/tags/%E5%BF%83%E5%BE%97/"
-            >心得</a
-          >
-        </div><div
-          class="
-            archives-tag-list-item
-          "
-          data-aos="zoom-in"
-        >
-          <a
-            class="
-              archives-tag-list-link
-            "
-            href="/tags/%E4%B8%BB%E9%A2%98/"
-            >主题</a
-          >
-        </div><div
-          class="
-            archives-tag-list-item
-          "
-          data-aos="zoom-in"
-        >
-          <a
-            class="
-              archives-tag-list-link
-            "
-            href="/tags/%E6%B5%8B%E8%AF%95/"
-            >测试</a
-          >
+  ><div class="article-nav-link-wrap left"><img
+            data-src="/images/sixth.jpg"
+            data-sizes="auto"
+            alt="fastapi后端学习记录-1"
+            class="lazyload"
+          /><a
+          href="/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-1/"
+          aria-label="前一篇:fastapi后端学习记录-1"
+          title="前一篇:fastapi后端学习记录-1"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">fastapi后端学习记录-1</h3>
+      </div><div class="article-nav-link-wrap right"><img
+            data-src="/images/sixth.jpg"
+            data-sizes="auto"
+            alt="fastapi后端学习记录-3"
+            class="lazyload"
+          /><a
+          href="/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-3/"
+          aria-label="后一篇:fastapi后端学习记录-3"
+          title="后一篇:fastapi后端学习记录-3"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">fastapi后端学习记录-3</h3>
+      </div></nav></article><section id="comments" data-aos="fade-up">
+<div class="comment-header"><h2 class="comment-title">说些什么吧！</h2>
+  <div class="comment-selector">
+    <div class="comment-selector-wrap"><div class="selector-item" data-selector="utterances">
+          <span>utterances</span>
         </div></div>
-  </div></section>
+  </div>
+</div>
+
+<div class="comment-content"><div class="comment utterances-comment" data-aos="fade-up"
+     >
+    </div></div>
+</section></section>
         </div><footer id="footer" aria-label="Site footer">
   <div style="width: 100%; overflow: hidden">
     <div class="footer-line"></div>
@@ -790,7 +611,32 @@
             <div class="arrow-up"></div>
           </div><div id="mask" class="hide"></div>
       </div><nav id="mobile-nav" aria-label="Mobile navigation">
-  <div class="sidebar-wrap"><div class="sidebar-author">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#框架基石与开发环境">框架基石与开发环境</a>
+      <ul>
+        <li><a href="#路径操作装饰器">路径操作装饰器</a></li>
+        <li><a href="#类型提示-type-hints">类型提示 (Type Hints)</a></li>
+      </ul>
+    </li>
+    <li><a href="#请求处理-request-handling">请求处理 (Request Handling)</a>
+      <ul>
+        <li><a href="#路径操作与参数-路径参数-查询参数">路径操作与参数： 路径参数 查询参数</a></li>
+        <li><a href="#请求体">请求体</a></li>
+      </ul>
+    </li>
+    <li><a href="#响应处理">响应处理</a>
+      <ul>
+        <li><a href="#返回任意数据">返回任意数据</a></li>
+      </ul>
+    </li>
+    <li><a href="#pydantic模型">pydantic模型</a></li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img
     data-src="/avatar/avatar.webp"
     data-sizes="auto"
@@ -855,7 +701,10 @@
         href="/friend"
         aria-label="友链"
       ></a><div class='sidebar-menu-icon icon '>&#xe63d;</div><div class="sidebar-menu-link">友链</div>
-    </div></div></div></nav>
+    </div></div></div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
 </div><meting-js
         theme="var(--color-link)"
         id="2265921590"server="netease"type="playlist"fixed="true"autoplay="false"loop="all"order="random"preload="auto"volume="0.7"mutex="true"lrc-type="0">
@@ -943,10 +792,10 @@
   <div><script data-pjax>
         window.REIMU_POST = {
           author: "Shysta",
-          title: "Tags",
-          url: "http:\/\/localhost:1313\/tags\/",
-          description: "",
-          cover: "http:\/\/localhost:1313\/images\/banner-1.webp",
+          title: "fastapi后端学习记录-2",
+          url: "http:\/\/localhost:1313\/post\/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-2\/",
+          description: "本文记录后端的一些学习历程",
+          cover: "http:\/\/localhost:1313\/images\/sixth.jpg",
         };
       </script><script src="/js/insert_highlight.js" data-pjax ></script><script src="/js/tabs.js" data-pjax defer></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
           if (_$$(`${gallery} ${children}`).length > 0) {

@@ -12,12 +12,172 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Wed, 04 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2026 23:30:00 +0800</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/post/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>fastapi后端学习记录-3</title>
+      <link>http://localhost:1313/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-3/</link>
+      <pubDate>Wed, 18 Mar 2026 23:30:00 &#43;0800</pubDate>
+      <author>213243859@seu.edu.cn (Shysta)</author>
+      <guid>http://localhost:1313/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-3/</guid>
+      <description>
+        <![CDATA[<h1>fastapi后端学习记录-3</h1><p>作者：Shysta（213243859@seu.edu.cn）</p>
+        
+          后端学习日志
+        
+        <hr><p>本文2026-03-18首发于<a href='http://localhost:1313/'>Shystab</a>，最后修改于2026-03-18</p>]]>
+      </description>
+      
+        <category>学习</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>fastapi后端学习记录-2</title>
+      <link>http://localhost:1313/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-2/</link>
+      <pubDate>Tue, 17 Mar 2026 23:30:00 &#43;0800</pubDate>
+      <author>213243859@seu.edu.cn (Shysta)</author>
+      <guid>http://localhost:1313/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-2/</guid>
+      <description>
+        <![CDATA[<h1>fastapi后端学习记录-2</h1><p>作者：Shysta（213243859@seu.edu.cn）</p>
+        
+          后端学习日志
+        
+        <hr><p>本文2026-03-17首发于<a href='http://localhost:1313/'>Shystab</a>，最后修改于2026-03-17</p>]]>
+      </description>
+      
+        <category>学习</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>前端学习记录开篇</title>
+      <link>http://localhost:1313/post/%E5%89%8D%E7%AB%AF-html&#43;css&#43;javascript&#43;react%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Sun, 15 Mar 2026 23:30:00 &#43;0800</pubDate>
+      <author>213243859@seu.edu.cn (Shysta)</author>
+      <guid>http://localhost:1313/post/%E5%89%8D%E7%AB%AF-html&#43;css&#43;javascript&#43;react%E5%AD%A6%E4%B9%A0/</guid>
+      <description>
+        <![CDATA[<h1>前端学习记录开篇</h1><p>作者：Shysta（213243859@seu.edu.cn）</p>
+        
+          前端内容学习
+        
+        <hr><p>本文2026-03-15首发于<a href='http://localhost:1313/'>Shystab</a>，最后修改于2026-03-15</p>]]>
+      </description>
+      
+        <category>学习</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>fastapi后端学习记录-1</title>
+      <link>http://localhost:1313/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-1/</link>
+      <pubDate>Sun, 15 Mar 2026 23:30:00 &#43;0800</pubDate>
+      <author>213243859@seu.edu.cn (Shysta)</author>
+      <guid>http://localhost:1313/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97-1/</guid>
+      <description>
+        <![CDATA[<h1>fastapi后端学习记录-1</h1><p>作者：Shysta（213243859@seu.edu.cn）</p>
+        
+          后端学习日志
+        
+        <hr><p>本文2026-03-15首发于<a href='http://localhost:1313/'>Shystab</a>，最后修改于2026-03-15</p>]]>
+      </description>
+      
+        <category>学习</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>开学日 2/16</title>
+      <link>http://localhost:1313/post/schoolday-two-weeks/</link>
+      <pubDate>Sun, 15 Mar 2026 23:30:00 &#43;0800</pubDate>
+      <author>213243859@seu.edu.cn (Shysta)</author>
+      <guid>http://localhost:1313/post/schoolday-two-weeks/</guid>
+      <description>
+        <![CDATA[<h1>开学日 2/16</h1><p>作者：Shysta（213243859@seu.edu.cn）</p>
+        
+          记录开学以来前两周的心路历程
+        
+        <hr><p>本文2026-03-15首发于<a href='http://localhost:1313/'>Shystab</a>，最后修改于2026-03-15</p>]]>
+      </description>
+      
+        <category>记录</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>DL hw-2音素识别 李宏毅作业学习</title>
+      <link>http://localhost:1313/post/deep-learning-2/</link>
+      <pubDate>Mon, 23 Feb 2026 23:30:00 &#43;0800</pubDate>
+      <author>213243859@seu.edu.cn (Shysta)</author>
+      <guid>http://localhost:1313/post/deep-learning-2/</guid>
+      <description>
+        <![CDATA[<h1>DL hw-2音素识别 李宏毅作业学习</h1><p>作者：Shysta（213243859@seu.edu.cn）</p>
+        
+          记录寒假深度学习的一些小内容
+        
+        <hr><p>本文2026-02-23首发于<a href='http://localhost:1313/'>Shystab</a>，最后修改于2026-02-23</p>]]>
+      </description>
+      
+        <category>学习</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>DL hw-1COVID-19  李宏毅作业学习</title>
+      <link>http://localhost:1313/post/deep-learning-1/</link>
+      <pubDate>Mon, 23 Feb 2026 20:30:00 &#43;0800</pubDate>
+      <author>213243859@seu.edu.cn (Shysta)</author>
+      <guid>http://localhost:1313/post/deep-learning-1/</guid>
+      <description>
+        <![CDATA[<h1>DL hw-1COVID-19  李宏毅作业学习</h1><p>作者：Shysta（213243859@seu.edu.cn）</p>
+        
+          记录寒假深度学习的一些小内容
+        
+        <hr><p>本文2026-02-23首发于<a href='http://localhost:1313/'>Shystab</a>，最后修改于2026-02-23</p>]]>
+      </description>
+      
+        <category>学习</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>Hugo：我的博客与 Reimu 主题探索之旅</title>
+      <link>http://localhost:1313/post/hugo&#43;reimu/</link>
+      <pubDate>Thu, 05 Feb 2026 20:30:00 &#43;0800</pubDate>
+      <author>213243859@seu.edu.cn (Shysta)</author>
+      <guid>http://localhost:1313/post/hugo&#43;reimu/</guid>
+      <description>
+        <![CDATA[<h1>Hugo：我的博客与 Reimu 主题探索之旅</h1><p>作者：Shysta（213243859@seu.edu.cn）</p>
+        
+          记录一次完整的博客搭建过程：为何放弃Stack 主题，最终投入 Hugo 与 Reimu 主题的怀抱，并解决一系列配置与部署问题的全过程。
+        
+        <hr><p>本文2026-02-05首发于<a href='http://localhost:1313/'>Shystab</a>，最后修改于2026-02-05</p>]]>
+      </description>
+      
+        <category>技术实践</category>
+      
+    </item>
     
     
 
@@ -70,12 +230,12 @@
   <div class="details-content"><p>喵~</p>
 </div>
 </details>
-<div class="gallery-wall" id="photoWall-eeb3df150"></div>
+<div class="gallery-wall" id="photoWall-a9e95c1fd"></div>
 <script>
   (function() {
     const imageUrls = JSON.parse("[\"/post/%E6%B5%8B%E8%AF%95%E8%B4%B4/a.jpg\",\"/post/%E6%B5%8B%E8%AF%95%E8%B4%B4/b.jpg\"]");
     let images = [];
-    const wallId = '#photoWall-eeb3df150';
+    const wallId = '#photoWall-a9e95c1fd';
     let resizeTimer;
     let lastWidth = 0;
     
@@ -238,6 +398,8 @@
         
         <hr><p>本文2026-02-04首发于<a href='http://localhost:1313/'>Shystab</a>，最后修改于2026-02-04</p>]]>
       </description>
+      
+        <category>TEST</category>
       
     </item>
     

@@ -8,7 +8,7 @@
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
 /><title>
-  前端学习记录开篇 | Shysta
+  fastapi后端学习记录-1 | Shysta
 </title>
 <meta name="description" content="本文记录后端的一些学习历程"/>
     <meta name="keywords" content="Fastapi, 全栈" /><script>
@@ -36,7 +36,7 @@
     type="font/woff2"
     crossorigin="anonymous"
   /><link rel="stylesheet" href="/css/loader.css" /><meta property="og:type" content="website" />
-  <meta property="og:title" content="前端学习记录开篇 | Shysta" />
+  <meta property="og:title" content="fastapi后端学习记录-1 | Shysta" />
   <meta
     property="og:description"
     content="本文记录后端的一些学习历程"
@@ -48,12 +48,12 @@
   />
   <meta
     property="og:image"
-    content="/images/forth.jpg"
+    content="/images/sixth.jpg"
   />
   <meta property="article:author" content="Shysta" />
   <meta property="article:published_time" content="2026-03-15T23:30:00&#43;08:00" />
   <meta property="article:modified_time" content="2026-03-15T23:30:00&#43;08:00" /><meta property="article:tag" content="Fastapi全栈后端" /><meta name="twitter:card" content="summary" />
-  <meta name="twitter:image" content="/images/forth.jpg" />
+  <meta name="twitter:image" content="/images/sixth.jpg" />
 <link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.css" /><link
     rel="preload"
     as="style"
@@ -188,9 +188,9 @@
       </script>
     </nav></div>
 <header id="header" aria-label="Site header"><picture></picture>
-    <img crossorigin="anonymous" fetchpriority="high" src="/images/forth.jpg" alt="前端学习记录开篇"><div id="header-outer">
+    <img crossorigin="anonymous" fetchpriority="high" src="/images/sixth.jpg" alt="fastapi后端学习记录-1"><div id="header-outer">
     <div id="header-title"><span id="logo">
-            <h1 data-aos="slide-up">前端学习记录开篇</h1>
+            <h1 data-aos="slide-up">fastapi后端学习记录-1</h1>
           </span><h2 id="subtitle-wrap" data-aos="slide-down"><span id="subtitle">后端学习日志</span></h2></div>
   </div>
 </header><div id="content"
@@ -202,7 +202,27 @@
       data-aos="fade-up"
     ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
 <div class="sidebar-toc-wrapper toc-div-class">
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#http协议基础">HTTP协议基础</a>
+      <ul>
+        <li><a href="#11-请求方法http-methods">1.1 请求方法（HTTP Methods）</a></li>
+        <li><a href="#12-状态码status-codes">1.2 状态码（Status Codes）</a></li>
+        <li><a href="#13请求头与响应头headers">1.3请求头与响应头（Headers）</a></li>
+        <li><a href="#14-url-结构">1.4 URL 结构</a></li>
+      </ul>
+    </li>
+    <li><a href="#restful-api-设计原则">RESTful API 设计原则</a></li>
+    <li><a href="#json-数据格式">JSON 数据格式</a></li>
+    <li><a href="#python-编程基础">Python 编程基础</a>
+      <ul>
+        <li><a href="#1python核心语法">1.Python核心语法</a></li>
+        <li><a href="#类型提示type-hints--fastapi-的核心依赖">类型提示（Type Hints） ⭐️ FastAPI 的核心依赖</a></li>
+        <li><a href="#异步编程基础">异步编程基础</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 </div></div>
           <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img
@@ -216,7 +236,7 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">8</div>
+    <div>文章</div><div class="sidebar-state-number">7</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -226,7 +246,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">23</div>
+    <div class="sidebar-state-number">17</div>
   </a>
 </div>
 <div class="sidebar-social" ><div class="icon-email sidebar-social-icon">
@@ -295,7 +315,178 @@
       >2026-03-15</time
     >
   </span></div>
-</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="后端基础概念">
+<a class="header-anchor" href="#%e5%90%8e%e7%ab%af%e5%9f%ba%e7%a1%80%e6%a6%82%e5%bf%b5"></a>
+后端基础概念
+</h1><h2 id="http协议基础">
+<a class="header-anchor" href="#http%e5%8d%8f%e8%ae%ae%e5%9f%ba%e7%a1%80"></a>
+HTTP协议基础
+</h2><h3 id="11-请求方法http-methods">
+<a class="header-anchor" href="#11-%e8%af%b7%e6%b1%82%e6%96%b9%e6%b3%95http-methods"></a>
+1.1 请求方法（HTTP Methods）
+</h3><p>诸如 POST(创造) PUT（完整替换）GET（获取资源）PATCH（部分更新资源）DELETE（删除资源）
+后端提供给访问者的接口 接收并返回相应内容</p>
+<h3 id="12-状态码status-codes">
+<a class="header-anchor" href="#12-%e7%8a%b6%e6%80%81%e7%a0%81status-codes"></a>
+1.2 状态码（Status Codes）
+</h3><p>服务器用三位数字告诉你请求的结果。就像考试成绩：2xx 是优秀，4xx 是你的问题，5xx 是老师改卷时系统崩了。</p>
+<ul>
+<li><strong>1xx（信息性）</strong>：请求已收到，继续处理。（很少见）</li>
+<li><strong>2xx（成功）</strong>：✅ 请求成功处理
+<ul>
+<li>200 OK：一切正常（GET 成功）</li>
+<li>201 Created：资源创建成功（POST 成功）</li>
+</ul>
+</li>
+<li><strong>3xx（重定向）</strong>：需要跳转到另一个地址
+<ul>
+<li>301 Moved Permanently：资源永久搬家了</li>
+<li>302 Found：临时跳转</li>
+</ul>
+</li>
+<li><strong>4xx（客户端错误）</strong>：❌ 你发错请求了
+<ul>
+<li>400 Bad Request：请求格式不对（比如缺少必要字段）</li>
+<li>401 Unauthorized：没登录或登录失效</li>
+<li>403 Forbidden：登录了但没有权限（比如普通用户想删管理员）</li>
+<li>404 Not Found：资源不存在（URL 写错了）</li>
+</ul>
+</li>
+<li><strong>5xx（服务器错误）</strong>：💥 服务器自己出问题了
+<ul>
+<li>500 Internal Server Error：服务器内部错误（代码崩了）</li>
+<li>503 Service Unavailable：服务暂时不可用（比如服务器过载）</li>
+</ul>
+</li>
+</ul>
+<h3 id="13请求头与响应头headers">
+<a class="header-anchor" href="#13%e8%af%b7%e6%b1%82%e5%a4%b4%e4%b8%8e%e5%93%8d%e5%ba%94%e5%a4%b4headers"></a>
+1.3请求头与响应头（Headers）
+</h3><h4 id="请求头客户端--服务器">
+<a class="header-anchor" href="#%e8%af%b7%e6%b1%82%e5%a4%b4%e5%ae%a2%e6%88%b7%e7%ab%af--%e6%9c%8d%e5%8a%a1%e5%99%a8"></a>
+请求头（客户端 → 服务器）
+</h4><p>当客户端（如浏览器、App）向服务器发送请求时，会在请求头中附带额外的说明，帮助服务器理解如何处理这个请求。<br>
+比如：<code>Host</code>、<code>User-Agent</code>、<code>Accept</code>、<code>Authorization</code>、<code>Cookie</code>、<code>Content-Type</code> 等。</p>
+<h4 id="响应头服务器--客户端">
+<a class="header-anchor" href="#%e5%93%8d%e5%ba%94%e5%a4%b4%e6%9c%8d%e5%8a%a1%e5%99%a8--%e5%ae%a2%e6%88%b7%e7%ab%af"></a>
+响应头（服务器 → 客户端）
+</h4><p>服务器在处理完请求后，会在响应中添加响应头，告诉客户端如何解析返回的数据或执行后续操作。<br>
+比如：<code>Content-Type</code>（请求头也有）、<code>Set-Cookie</code>、<code>Cache-Control</code>、<code>Access-Control-Allow-Origin</code> 等。</p>
+<h3 id="14-url-结构">
+<a class="header-anchor" href="#14-url-%e7%bb%93%e6%9e%84"></a>
+1.4 URL 结构
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-text" data-lang="text"><span class="line"><span class="cl">https://www.example.com:443/path/to/resource?name=alice&amp;page=2#section
+</span></span><span class="line"><span class="cl">\____/ \_____________/ \__/ \______/ \_______________________/ \_______/
+</span></span><span class="line"><span class="cl"> 协议         域名         端口         路径               查询参数        片段
+</span></span></code></pre></div><ul>
+<li>协议：http 或 https（加密的 http）</li>
+<li>域名：服务器的地址（可解析为 IP）</li>
+<li>端口：默认 http 80，https 443，可以省略</li>
+<li>路径：资源在服务器上的位置，如 /users/123</li>
+<li>查询参数：?key1=value1&amp;key2=value2，用于过滤、排序、分页等</li>
+<li>片段：前端页面内锚点，不会发送到服务器</li>
+</ul>
+<h2 id="restful-api-设计原则">
+<a class="header-anchor" href="#restful-api-%e8%ae%be%e8%ae%a1%e5%8e%9f%e5%88%99"></a>
+RESTful API 设计原则
+</h2><p><a href="https://blog.csdn.net/2603_94941287/article/details/159087263">详情 STFM</a></p>
+<h2 id="json-数据格式">
+<a class="header-anchor" href="#json-%e6%95%b0%e6%8d%ae%e6%a0%bc%e5%bc%8f"></a>
+JSON 数据格式
+</h2><p>JSON（JavaScript Object Notation）是目前最流行的API数据交换格式。它轻量、易读，几乎所有语言都支持。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="s2">&#34;user&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;id&#34;</span><span class="p">:</span> <span class="mi">123</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Alice&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;email&#34;</span><span class="p">:</span> <span class="s2">&#34;alice@example.com&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;is_active&#34;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;tags&#34;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&#34;developer&#34;</span><span class="p">,</span> <span class="s2">&#34;blogger&#34;</span><span class="p">],</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;profile&#34;</span><span class="p">:</span> <span class="n">null</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="python-编程基础">
+<a class="header-anchor" href="#python-%e7%bc%96%e7%a8%8b%e5%9f%ba%e7%a1%80"></a>
+Python 编程基础
+</h2><h3 id="1python核心语法">
+<a class="header-anchor" href="#1python%e6%a0%b8%e5%bf%83%e8%af%ad%e6%b3%95"></a>
+1.Python核心语法
+</h3><ul>
+<li>变量、数据类型（int、str、list、dict、set、tuple）</li>
+<li>控制流（if、for、while）</li>
+<li>函数定义、参数类型、默认参数、*args/**kwargs:</li>
+<li>类与面向对象编程（继承、特殊方法）</li>
+</ul>
+<h4 id="411-args-和-kwargs">
+<a class="header-anchor" href="#411-args-%e5%92%8c-kwargs"></a>
+4.11 *args 和 **kwargs
+</h4><ul>
+<li>*args：接受任意数量的位置参数，打包成元组（tuple）。</li>
+<li>**kwargs：接受任意数量的关键字参数，打包成字典（dict）。</li>
+<li>
+<ul>
+<li>和 ** 也可用于解包序列和字典，常用来调用函数。</li>
+</ul>
+</li>
+</ul>
+<p>而对于面向对象编程 有c++基础会好很多 但有些不一样</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">User</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 类属性（所有实例共享）</span>
+</span></span><span class="line"><span class="cl">    <span class="n">role</span> <span class="o">=</span> <span class="s2">&#34;普通用户&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 构造方法：初始化实例属性</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>   <span class="c1"># 实例属性</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">age</span> <span class="o">=</span> <span class="n">age</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 实例方法</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;你好，我是</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">，今年</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2">岁。&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 创建实例</span>
+</span></span><span class="line"><span class="cl"><span class="n">alice</span> <span class="o">=</span> <span class="n">User</span><span class="p">(</span><span class="s2">&#34;Alice&#34;</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">alice</span><span class="o">.</span><span class="n">greet</span><span class="p">())</span>       <span class="c1"># 输出：你好，我是Alice，今年25岁。</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">alice</span><span class="o">.</span><span class="n">role</span><span class="p">)</span>          <span class="c1"># 输出：普通用户</span>
+</span></span></code></pre></div><p>继承允许一个类（子类）获取另一个类（父类）的属性和方法，实现代码复用和扩展。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Admin</span><span class="p">(</span><span class="n">User</span><span class="p">):</span>          <span class="c1"># Admin 继承自 User</span>
+</span></span><span class="line"><span class="cl">    <span class="n">role</span> <span class="o">=</span> <span class="s2">&#34;管理员&#34;</span>          <span class="c1"># 覆盖父类的类属性</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">,</span> <span class="n">permissions</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 调用父类的构造方法，初始化 name 和 age</span>
+</span></span><span class="line"><span class="cl">        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">age</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">permissions</span> <span class="o">=</span> <span class="n">permissions</span>   <span class="c1"># 新增属性</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 新增方法</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">manage</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> 正在管理后台。&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 重写父类方法</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">greet</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;管理员 </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">，您好！您有权限：</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">permissions</span><span class="si">}</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">admin</span> <span class="o">=</span> <span class="n">Admin</span><span class="p">(</span><span class="s2">&#34;Bob&#34;</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="p">[</span><span class="s2">&#34;用户管理&#34;</span><span class="p">,</span> <span class="s2">&#34;内容审核&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">greet</span><span class="p">())</span>        <span class="c1"># 输出：管理员 Bob，您好！您有权限：[&#39;用户管理&#39;, &#39;内容审核&#39;]</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">manage</span><span class="p">())</span>       <span class="c1"># 输出：Bob 正在管理后台。</span>
+</span></span></code></pre></div><p>特殊方法（Magic Methods）
+Python 类中以双下划线开头和结尾的方法称为特殊方法（或魔术方法），它们在特定情况下被自动调用。类似析构函数之类 <strong>init</strong>(self,…)</p>
+<h3 id="类型提示type-hints--fastapi-的核心依赖">
+<a class="header-anchor" href="#%e7%b1%bb%e5%9e%8b%e6%8f%90%e7%a4%batype-hints--fastapi-%e7%9a%84%e6%a0%b8%e5%bf%83%e4%be%9d%e8%b5%96"></a>
+类型提示（Type Hints） ⭐️ FastAPI 的核心依赖
+</h3><p>基本类型注解（int、str、float、bool）
+容器类型（List[int]、Dict[str, Any]）
+Optional（新版fastapi已不用 选择shysta= str | none 写法）、Union、Any
+Python 3.10+ 新语法：str | None、list[int]
+Annotated（Python 3.9+）：附加元数据，FastAPI 常用来组合 Query、Path 等</p>
+<h3 id="异步编程基础">
+<a class="header-anchor" href="#%e5%bc%82%e6%ad%a5%e7%bc%96%e7%a8%8b%e5%9f%ba%e7%a1%80"></a>
+异步编程基础
+</h3><p>同步 vs 异步
+async / await 关键字
+事件循环概念
+简单的异步函数示例
+<a href="https://www.runoob.com/python3/python-asyncio.html">异步蟒蛇(bushi)</a></p>
+<p>更多内容 <a href="https://www.runoob.com/python3/python3-tutorial.html">STFW</a>
+以及这玩意确实是个及其全的cser网站 刚发现 <del>亏大发了</del></p>
+</div>
     <footer class="article-footer"><blockquote class="article-copyright"><p><strong><span class="icon-user icon"></span>本文作者：</strong>Shysta</p><p>
       <strong><span class="icon-link icon"></span>本文链接：</strong><a href="http://localhost:1313/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/">http://localhost:1313/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/</a>
     </p><p>
@@ -304,11 +495,11 @@
       本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener nofollow noreferrer" target="_blank"><span class="icon-creative-commons"></span>BY-NC-SA</a> 许可协议。转载请注明出处！
     </p>
     <span class="icon-creative-commons article-copyright-bg"></span></blockquote>
-<div class="share-wrapper"><a href="https://service.weibo.com/share/share.php?url=http://localhost:1313/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/&amp;appkey=&amp;title=%e5%89%8d%e7%ab%af%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e5%bc%80%e7%af%87&amp;pic=&amp;ralateUid=" target="_blank" rel="noopener noreferrer" title="前端学习记录开篇">
+<div class="share-wrapper"><a href="https://service.weibo.com/share/share.php?url=http://localhost:1313/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/&amp;appkey=&amp;title=fastapi%e5%90%8e%e7%ab%af%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95-1&amp;pic=&amp;ralateUid=" target="_blank" rel="noopener noreferrer" title="fastapi后端学习记录-1">
       <div class="share-icon icon icon-weibo"></div>
-    </a><a href="https://connect.qq.com/widget/shareqq/index.html?url=http://localhost:1313/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/&amp;title=%e5%89%8d%e7%ab%af%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95%e5%bc%80%e7%af%87&amp;desc=%e6%9c%ac%e6%96%87%e8%ae%b0%e5%bd%95%e5%90%8e%e7%ab%af%e7%9a%84%e4%b8%80%e4%ba%9b%e5%ad%a6%e4%b9%a0%e5%8e%86%e7%a8%8b&amp;source=http://localhost:1313/" target="_blank" rel="noopener noreferrer" title="前端学习记录开篇">
+    </a><a href="https://connect.qq.com/widget/shareqq/index.html?url=http://localhost:1313/post/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97/&amp;title=fastapi%e5%90%8e%e7%ab%af%e5%ad%a6%e4%b9%a0%e8%ae%b0%e5%bd%95-1&amp;desc=%e6%9c%ac%e6%96%87%e8%ae%b0%e5%bd%95%e5%90%8e%e7%ab%af%e7%9a%84%e4%b8%80%e4%ba%9b%e5%ad%a6%e4%b9%a0%e5%8e%86%e7%a8%8b&amp;source=http://localhost:1313/" target="_blank" rel="noopener noreferrer" title="fastapi后端学习记录-1">
       <div class="share-icon icon icon-qq"></div>
-    </a><a href="javascript:;"  title="前端学习记录开篇">
+    </a><a href="javascript:;"  title="fastapi后端学习记录-1">
       <div class="share-icon icon icon-weixin"><div id="share-weixin">
             <div class="share-weixin-dom">
               <div class="share-weixin-content">
@@ -362,19 +553,19 @@
     aria-label="Article navigation"
     data-aos="fade-up"
   ><div class="article-nav-link-wrap left"><img
-            data-src="/images/forth.jpg"
+            data-src="/images/fifth.jpg"
             data-sizes="auto"
-            alt="前端学习记录开篇"
+            alt="DL hw-2音素识别 李宏毅作业学习"
             class="lazyload"
           /><a
-          href="/post/%E5%89%8D%E7%AB%AF-html&#43;css&#43;javascript&#43;react%E5%AD%A6%E4%B9%A0/"
-          aria-label="前一篇:前端学习记录开篇"
-          title="前一篇:前端学习记录开篇"
+          href="/post/deep-learning-2/"
+          aria-label="前一篇:DL hw-2音素识别 李宏毅作业学习"
+          title="前一篇:DL hw-2音素识别 李宏毅作业学习"
         ></a>
         <div class="article-nav-caption">前一篇</div>
-        <h3 class="article-nav-title">前端学习记录开篇</h3>
+        <h3 class="article-nav-title">DL hw-2音素识别 李宏毅作业学习</h3>
       </div><div class="article-nav-link-wrap right"><img
-            data-src="/images/forth.jpg"
+            data-src="/images/eighth.jpg"
             data-sizes="auto"
             alt="开学日 2/16"
             class="lazyload"
@@ -418,10 +609,10 @@
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;697</span
+          >&nbsp;983</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;00:07</span>
+        <span class="icon-coffee">&nbsp;00:09</span>
       </div><div>
         <span class="icon-eye"></span>
         <span id="busuanzi_container_site_pv"
@@ -445,7 +636,27 @@
       </div><nav id="mobile-nav" aria-label="Mobile navigation">
   <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
 <div class="sidebar-toc-wrapper toc-div-class">
-  <nav id="TableOfContents"></nav>
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#http协议基础">HTTP协议基础</a>
+      <ul>
+        <li><a href="#11-请求方法http-methods">1.1 请求方法（HTTP Methods）</a></li>
+        <li><a href="#12-状态码status-codes">1.2 状态码（Status Codes）</a></li>
+        <li><a href="#13请求头与响应头headers">1.3请求头与响应头（Headers）</a></li>
+        <li><a href="#14-url-结构">1.4 URL 结构</a></li>
+      </ul>
+    </li>
+    <li><a href="#restful-api-设计原则">RESTful API 设计原则</a></li>
+    <li><a href="#json-数据格式">JSON 数据格式</a></li>
+    <li><a href="#python-编程基础">Python 编程基础</a>
+      <ul>
+        <li><a href="#1python核心语法">1.Python核心语法</a></li>
+        <li><a href="#类型提示type-hints--fastapi-的核心依赖">类型提示（Type Hints） ⭐️ FastAPI 的核心依赖</a></li>
+        <li><a href="#异步编程基础">异步编程基础</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 </div></div>
         <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
   <img
@@ -459,7 +670,7 @@
 </div>
 <div class="sidebar-state">
   <div class="sidebar-state-article">
-    <div>文章</div><div class="sidebar-state-number">8</div>
+    <div>文章</div><div class="sidebar-state-number">7</div>
   </div>
   <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
     <div>分类</div>
@@ -469,7 +680,7 @@
   </a>
   <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
     <div>标签</div>
-    <div class="sidebar-state-number">23</div>
+    <div class="sidebar-state-number">17</div>
   </a>
 </div>
 <div class="sidebar-social" ><div class="icon-email sidebar-social-icon">
@@ -603,10 +814,10 @@
   <div><script data-pjax>
         window.REIMU_POST = {
           author: "Shysta",
-          title: "前端学习记录开篇",
+          title: "fastapi后端学习记录-1",
           url: "http:\/\/localhost:1313\/post\/fastapi%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0%E6%97%A5%E5%BF%97\/",
           description: "本文记录后端的一些学习历程",
-          cover: "http:\/\/localhost:1313\/images\/forth.jpg",
+          cover: "http:\/\/localhost:1313\/images\/sixth.jpg",
         };
       </script><script src="/js/insert_highlight.js" data-pjax ></script><script src="/js/tabs.js" data-pjax defer></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
           if (_$$(`${gallery} ${children}`).length > 0) {
