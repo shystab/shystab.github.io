@@ -12,12 +12,32 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Wed, 18 Mar 2026 23:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Mar 2026 16:30:00 +0800</lastBuildDate>
     
     
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>nju-ics-prepare</title>
+      <link>http://localhost:1313/post/nju-ics%E8%A1%A5%E5%85%A8%E8%AE%A1%E5%88%92/</link>
+      <pubDate>Wed, 25 Mar 2026 16:30:00 &#43;0800</pubDate>
+      <author>213243859@seu.edu.cn (Shysta)</author>
+      <guid>http://localhost:1313/post/nju-ics%E8%A1%A5%E5%85%A8%E8%AE%A1%E5%88%92/</guid>
+      <description>
+        <![CDATA[<h1>nju-ics-prepare</h1><p>作者：Shysta（213243859@seu.edu.cn）</p>
+        
+          ics学习前置内容
+        
+        <hr><p>本文2026-03-25首发于<a href='http://localhost:1313/'>Shystab</a>，最后修改于2026-03-25</p>]]>
+      </description>
+      
+        <category>学习</category>
+      
+    </item>
     
     
 
@@ -35,7 +55,7 @@
         <hr><p>本文2026-03-18首发于<a href='http://localhost:1313/'>Shystab</a>，最后修改于2026-03-18</p>]]>
       </description>
       
-        <category>学习</category>
+        <category>fastapi</category>
       
     </item>
     
@@ -55,7 +75,7 @@
         <hr><p>本文2026-03-17首发于<a href='http://localhost:1313/'>Shystab</a>，最后修改于2026-03-17</p>]]>
       </description>
       
-        <category>学习</category>
+        <category>fastapi</category>
       
     </item>
     
@@ -75,7 +95,7 @@
         <hr><p>本文2026-03-15首发于<a href='http://localhost:1313/'>Shystab</a>，最后修改于2026-03-15</p>]]>
       </description>
       
-        <category>学习</category>
+        <category>fastapi</category>
       
     </item>
     

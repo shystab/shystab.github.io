@@ -8,7 +8,7 @@ draft: false
 summary: "后端学习日志"
 description: "本文记录后端的一些学习历程"
 
-categories: ["学习"]
+categories: ["fastapi"]
 tags: ["Fastapi", "全栈","后端"] 
 
 cover: "/images/sixth.jpg" 
@@ -36,7 +36,8 @@ keywords: ["Fastapi", "全栈"]
 pip install "fastapi[standard]"
 ```
 
-虽然我一开始不是这样安装的嘻嘻
+虽然我一开始不是这样安装的
+分别安装fastapi和uvicorn 
 
 
 ### 路径操作装饰器
@@ -57,8 +58,20 @@ pip install "fastapi[standard]"
 
 ### 类型提示 (Type Hints)
 annonated作为python3.9新提出的 官方推荐作为新写法替换以往内容
-bool | None = None则是3.10用于替换optional的
 
+bool | None = None则是3.10用于替换optional的
+```python
+from typing import Annotated
+from fastapi import Query
+
+# 旧写法
+def read_items(q: str = Query(None, max_length=50)):
+    ...
+
+# 新写法（推荐）
+def read_items(q: Annotated[str | None, Query(max_length=50)] = None):
+    ...
+```
 
 ## 请求处理 (Request Handling)
 
@@ -77,6 +90,7 @@ bool | None = None则是3.10用于替换optional的
 ### 路径操作与参数： 路径参数 查询参数
 
 路径参数：从 URL 路径中捕获参数，使用 Python 类型提示声明类型（也就是说和路劲中一样 变量名也就在路径里）
+
 查询参数：作为URL 中 ? 之后的部分，函数中未在路径中声明的参数会自动解释为查询参数。
 > 我可以随意混搭
 路径参数和查询参数可以同时存在
@@ -101,7 +115,18 @@ class Item(BaseModel):
 header从请求头中提取数据，常用于获取 User-Agent、Authorization 等。
 cookie从请求头的 Cookie 字段中提取特定 Cookie 值。
 
-表单和文件不谈 表单太老了 不用了
+```python
+from fastapi import Header, Cookie
+
+@app.get("/users/me")
+async def read_user(user_agent: Annotated[str | None, Header()] = None, session_id: Annotated[str | None, Cookie()] = None):
+    return {"user_agent": user_agent, "session_id": session_id}
+```
+
+表单和文件不谈 
+
+综上诸如Path Query Body Header 之类的参数声明函数都可以在Annonated函数里面为这些请求参数做声明 似乎Field是脱离其中的。
+
 
 ## 响应处理
 
@@ -117,6 +142,7 @@ async def hello():
 也可使用 response_model 指定响应模型
 用于过滤输出字段、保证响应格式一致。
 
+
 ```python
 from pydantic import BaseModel
 
@@ -130,11 +156,20 @@ async def create_item(item: Item):
 response_model 可以控制输出中哪些字段被包含，并执行响应验证。
 ```
 
+响应模型还可配合 response_model_exclude_unset、response_model_include 等参数精细控制输出。
 ## pydantic模型
-
+Pydantic 是 FastAPI 的数据验证核心。除了基本校验，还可以定义复杂模型、嵌套模型、自定义校验器等。
 [官方文档](https://pydantic.com.cn/)
 
 后话 目前对field path query body之类的内容理解更好了点 都只是对参数的额外补充。
+
+本篇速查
+- 路径操作装饰器：@app.get("/{id}")
+- 参数类型对照表：路径参数（同名）、查询参数（默认值）、请求体（Pydantic 模型）、Header/Cookie（Header() / Cookie()）
+- 常用 Field 参数：gt、le、max_length、description
+- 响应模型：response_model + 模型类，可控制输出字段
+- 推荐写法：Annotated[类型, 元数据] 代替旧式 Query(...) 等
+
 
 
 

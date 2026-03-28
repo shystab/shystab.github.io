@@ -572,8 +572,8 @@ share:
 home_categories:
   enable: true
   content:
-    - categories: # string (single-layer category) or array (multi-layer category)
-      cover: # empty means random cover
+    - categories: "fastapi" # string (single-layer category) or array (multi-layer category)
+      cover: "/images/sixth.jpg" # empty means random cover
     - categories:
       cover:
 
