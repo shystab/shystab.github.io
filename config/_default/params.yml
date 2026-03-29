@@ -173,8 +173,8 @@ sort_order:
 
 # Pagination
 paginate:
-  archive: # Number of posts per page in archive and taxonomy pages
-  post: # Number of posts per page in home and other list pages
+  archive: 8 # Number of posts per page in archive and taxonomy pages
+  post: 8 # Number of posts per page in home and other list pages
 
 ########################################
 # CSS
