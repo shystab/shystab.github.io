@@ -130,7 +130,53 @@ Tmux 让你在一个终端窗口中同时管理多个会话、窗口和面板，
 - `tmux list-sessions`：列出所有会话
 
 > **PA 建议**：在 PA 实验时，可以打开一个 Tmux 会话，分为三个面板：代码编辑区、编译运行区、GDB 调试区，效率会高很多。
+
+### 高级面板管理
+- **调整面板大小**：按住前缀键（`Ctrl+b`）后，再按方向键（`↑↓←→`）即可微调面板边界；或者按住前缀键后，按 `Alt+方向键` 进行更大步长的调整。
+- **交换面板位置**：`Ctrl+b {`（向左交换） / `Ctrl+b }`（向右交换）。
+- **将面板转换为独立窗口**：`Ctrl+b !`（将当前面板拆分为一个新窗口）。
+- **关闭当前面板**：`Ctrl+b x` 或直接输入 `exit`。
+- **面板布局切换**：`Ctrl+b Space` 循环切换几种预设布局（平铺、主次、垂直、水平等）。
+
+### 复制模式与缓冲区
+Tmux 支持在终端内复制文本，类似于 Vim 的复制模式。
+1. **进入复制模式**：`Ctrl+b [`。
+2. **移动光标**：使用 Vim 风格按键（`h`/`j`/`k`/`l`）或方向键。
+3. **开始选择**：按 `Space` 进入选择模式，移动光标划定区域。
+4. **复制选定内容**：按 `Enter` 将选中文本存入 Tmux 缓冲区。
+5. **粘贴**：`Ctrl+b ]`（粘贴最近一次复制的内容）。
+6. **查看缓冲区列表**：`Ctrl+b =`（列出历史缓冲区，可选择粘贴）。
+
+### 会话恢复（持久化）
+使用插件 `tmux-resurrect` 可以保存会话状态（窗口、面板、工作目录），重启后一键恢复。
+1. 安装 TPM（Tmux Plugin Manager）后，在 `~/.tmux.conf` 中添加：
+   ```conf
+   set -g @plugin 'tmux-plugins/tmux-resurrect'
+   ```
+2. 保存当前会话：`Ctrl+b Ctrl+s`。
+3. 恢复上次保存的会话：`Ctrl+b Ctrl+r`。
+
+### 自定义配置示例
+将以下内容添加到 `~/.tmux.conf` 可以优化体验：
+```conf
+# 将前缀键改为 Ctrl+a（更顺手）
+set -g prefix C-a
+unbind C-b
+bind C-a send-prefix
+
+# 鼠标支持（允许用鼠标选择窗格、调整大小）
+set -g mouse on
+
+# 设置窗格边框颜色
+set -g pane-border-style fg=colour240
+set -g pane-active-border-style fg=colour39
+
+# 快捷键：快速重新加载配置
+bind r source-file ~/.tmux.conf \; display "Reloaded!"
+```
+
 [tmux教程](https://www.ruanyifeng.com/blog/2019/10/tmux.html)
+
 ## git使用
 
 | 操作 | 命令 |
@@ -146,7 +192,59 @@ Tmux 让你在一个终端窗口中同时管理多个会话、窗口和面板，
 | 合并分支 | `git merge <branch>` |
 | 查看历史 | `git log` |
 
+### 更详细的 Git 操作
+
+#### 一、分支管理
+
+- **查看所有分支**：`git branch -a`（包括远程分支）
+- **创建并切换到新分支**：`git checkout -b <branch>`
+- **删除本地分支**：`git branch -d <branch>`（安全删除）或 `git branch -D <branch>`（强制删除）
+- **删除远程分支**：`git push origin --delete <branch>`
+- **重命名当前分支**：`git branch -m <new-name>`
+- **查看分支跟踪关系**：`git branch -vv`
+
+#### 二、提交操作
+
+- **修改最后一次提交**：`git commit --amend`（可修改提交信息或添加漏掉的文件）
+- **暂存修改**：`git stash`（临时保存工作目录的修改）
+- **恢复暂存**：`git stash pop`（恢复最近一次暂存）
+- **查看暂存列表**：`git stash list`
+- **选择性暂存**：`git stash push -p`（交互式选择要暂存的内容）
+
+#### 三、撤销与回退
+
+- **撤销工作目录的修改**：`git checkout -- <file>`（危险！不可恢复）
+- **撤销已暂存的文件**：`git reset HEAD <file>`（将文件从暂存区移回工作区）
+- **回退到指定提交**：
+  - `git reset --soft <commit>`：保留修改，只回退提交历史
+  - `git reset --mixed <commit>`：默认，回退提交历史并取消暂存
+  - `git reset --hard <commit>`：彻底丢弃所有修改，谨慎使用！
+- **查看操作记录**：`git reflog`（查看所有 HEAD 变更，可用于恢复误删分支或提交）
+
+#### 四、远程仓库操作
+
+- **添加远程仓库**：`git remote add origin <url>`
+- **查看远程仓库**：`git remote -v`
+- **拉取远程分支**：`git fetch origin`（只下载不合并）
+- **拉取并合并**：`git pull origin <branch>`（相当于 `fetch` + `merge`）
+- **推送并建立跟踪**：`git push -u origin <branch>`（首次推送时使用）
+- **查看提交差异**：`git diff origin/main..HEAD`（比较本地与远程 main 分支）
+
+#### 五、标签管理
+
+- **创建标签**：`git tag v1.0`（轻量标签）或 `git tag -a v1.0 -m "version 1.0"`（带注释标签）
+- **查看所有标签**：`git tag`
+- **推送标签到远程**：`git push origin --tags`
+- **删除标签**：`git tag -d v1.0`（本地）和 `git push origin --delete tag v1.0`（远程）
+
+#### 六、合并与变基
+
+- **合并分支**：`git merge <branch>`（保留分支历史）
+- **变基**：`git rebase <branch>`（使提交历史线性整洁，但会改写历史）
+- **交互式变基**：`git rebase -i HEAD~3`（修改最近 3 次提交）
+
 > PA 提示：每个 PA 阶段结束后及时提交，方便回退和对比。
+PS：vscode的git真好用 
 
 ## make gcc
 
@@ -158,6 +256,7 @@ Tmux 让你在一个终端窗口中同时管理多个会话、窗口和面板，
 4. **链接**：生成可执行文件
 
 ### 常用 GCC 选项
+
 | 选项 | 说明 |
 | ---- | ---- |
 | `-o <file>` | 指定输出文件名 |
@@ -171,6 +270,7 @@ Tmux 让你在一个终端窗口中同时管理多个会话、窗口和面板，
 | `-l<name>` | 链接指定库（如 `-lm`） |
 
 ### Makefile 基础
+
 ```makefile
 CC = gcc
 CFLAGS = -Wall -g
@@ -188,6 +288,8 @@ clean:
 
 .PHONY: clean
 ```
+
+
 
 ## GDB 基础使用教程
 
@@ -231,7 +333,7 @@ p &a #查看内存 / 地址内容
 当前完成pa0 完成大部分环境搭建 
 
 - [x]pa0
-- []pa1
+- [x]pa1
 - []pa2
 - []pa3
 - []pa4
