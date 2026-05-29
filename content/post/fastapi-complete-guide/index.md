@@ -8,7 +8,7 @@ draft: false
 summary: "一份全面的 FastAPI 学习与实战指南，涵盖基础概念、依赖注入、数据库操作、异步编程、项目结构与部署"
 description: "本文系统整理 FastAPI 的核心知识点，并结合实际项目经验，提供从零搭建到部署上线的完整参考"
 
-categories: ["fastapi"]
+categories: ["学习"]
 tags: ["FastAPI", "全栈", "后端", "Python", "SQLModel", "异步"]
 
 cover: "/images/eleventh.jpg" 

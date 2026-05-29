@@ -1,15 +1,15 @@
 ---
 title: "nju-ics-prepare"
 date: 2026-03-25T16:30:00+08:00
-lastmod: 2026-03-25T16:30:00+08:00
+lastmod: 2026-05-29T22:00:00+08:00
 author: "Shysta"
 
 draft: false
-summary: "ics学习前置内容"
-description: "ics路程漫漫啊"
+summary: "ICS 前置学习内容：Vim、Tmux、Git、GCC、Makefile、GDB"
+description: "为 NJU ICS PA 实验做准备，整理 Vim 操作、Tmux 终端复用、Git 完整工作流（含配置/认证/多 remote）、GCC编译、Makefile 和 GDB 调试的基础知识"
 
 categories: ["学习"]
-tags: ["ics"] 
+tags: ["ics", "Git", "Vim", "Tmux", "GDB", "GCC", "Makefile"]
 
 cover: "/images/ninth.jpg" 
 
@@ -21,7 +21,7 @@ copyright: true
 outdated: false
 sponsor: false
 
-keywords: ["ics"]
+keywords: ["ICS", "PA", "Vim", "Tmux", "Git", "GDB", "GCC", "Makefile", "NJU"]
 ---
 # ics学习前置
 我看的是21年的
@@ -177,7 +177,145 @@ bind r source-file ~/.tmux.conf \; display "Reloaded!"
 
 [tmux教程](https://www.ruanyifeng.com/blog/2019/10/tmux.html)
 
-## git使用
+## Git 使用
+
+PA 全程都要跟 Git 打交道——clone 项目、提交代码、拉取更新。下面从最开始的配置一路讲到多 remote 场景，都是实际会用到的内容。
+
+### 一、初次使用：先告诉 Git 你是谁
+
+装完 Git 第一件事不是 clone，是配置身份。没有这个，commit 会报错：
+
+```bash
+git config --global user.name "你的名字"
+git config --global user.email "你的邮箱@example.com"
+```
+
+`--global` 表示全局生效，一次配置就不用再管了。也可以不加 `--global` 给单个仓库单独配置。
+
+顺便可以设一下默认编辑器（不然可能会卡进 Vim 出不来）：
+
+```bash
+git config --global core.editor "vim"
+```
+
+查看当前配置：
+
+```bash
+git config --list
+```
+
+### 二、推送之前：你要先解决认证
+
+要把代码推到 GitHub，得让 GitHub 知道你是谁。目前主流两种方式：
+
+**方式一：SSH Key（推荐）**
+
+```bash
+# 1. 生成密钥对（一路回车就行）
+ssh-keygen -t ed25519 -C "你的邮箱@example.com"
+
+# 2. 查看公钥内容
+cat ~/.ssh/id_ed25519.pub
+```
+
+复制输出的内容，打开 GitHub → Settings → SSH and GPG keys → New SSH key，粘贴保存。
+
+之后 `git clone` 时记得用 SSH 地址（`:xxx/xxx.git`）而不是 HTTPS 地址，就不用每次输密码了。
+
+**方式二：Personal Access Token（HTTPS 用）**
+
+如果走 HTTPS 协议，GitHub 从 2021 年起就不支持密码认证了，得用 token。去 GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic) 生成一个，复制保存好。之后 push 时用户名输你的 GitHub 用户名，密码输这个 token。
+
+### 三、origin 到底是什么
+
+很多教程让你直接 `git push origin main`，但从来不说 `origin` 是什么。
+
+`origin` 是一个 **远程仓库的别名**（也就是 URL 的快捷方式）。它不是你敲出来的，是 `git clone` 自动创建的：
+
+```bash
+git clone https://github.com/xxx/repo.git
+# Git 自动做了这件事（等价于）：
+git remote add origin https://github.com/xxx/repo.git
+```
+
+所以 `git push origin main` = "推送到别名为 origin 的那个远程仓库的 main 分支"。
+
+查看所有 remote：
+
+```bash
+git remote -v
+# origin  https://github.com/xxx/repo.git (fetch)
+# origin  https://github.com/xxx/repo.git (push)
+```
+
+这个别名可以随便起，叫 `mygit`、`upstream`、`backup` 都行，`origin` 只是 clone 时的默认值。
+
+### 四、克隆别人的仓库，推到自己的仓库
+
+PA 的场景：你要 clone 官方项目，然后推到自己的 GitHub 仓库。这会遇到两个 remote：
+
+```bash
+# 1. 克隆官方仓库（自动得到 origin）
+git clone https://github.com/NJU-ProjectN/ics-pa.git
+cd ics-pa
+
+# 2. 在 GitHub 上新建一个你自己的空仓库（不要勾选任何初始化选项）
+#    然后把它添加为第二个 remote
+git remote add mygit https://github.com/你的用户名/你的仓库名.git
+#                        ↑ 这个 URL 在你的 GitHub 仓库页面能看到
+
+# 3. 推送到自己的仓库
+git push -u mygit main
+#        ↑ 这里用的是 mygit，不是 origin
+
+# 4. 之后如果官方仓库有更新，从 origin 拉
+git pull origin main
+
+# 5. 自己的修改推到自己仓库，用 mygit
+git push mygit main
+```
+
+所以如果你之前看到同时有 `origin` 和 `mygit`，就是这个原因——一个指向原项目，一个指向你自己的 fork。
+
+习惯上：
+- `origin` = 你主要推送的远程（自己的仓库）
+- `upstream` = 原作者的仓库（只拉取不推送）
+
+但叫什么完全是你自己定的。
+
+### 五、完整工作流（以 PA 为例）
+
+```bash
+# 1. 克隆
+git clone <你的仓库 SSH 地址>
+cd ics-pa
+
+# 2. 开发...
+#    vim 写代码
+#    make 编译
+
+# 3. 提交（建议每完成一个小功能就提交一次）
+git add .                    # 暂存所有修改
+git status                   # 检查到底改了啥（养成习惯）
+git commit -m "完成 PA1 第一阶段"
+
+# 4. 推送到远程
+git push origin main
+
+# 5. 如果官方有更新，拉取
+git pull origin main
+
+# 6. 如果只想下载更新但不自动合并
+git fetch origin
+git log --oneline origin/main..HEAD  # 看看本地比远程多了什么
+git merge origin/main                # 手动合并
+```
+
+> PA 提示：每个阶段结束后记得提交并 push，方便回退和对比。养成 add → commit → push 的习惯。
+
+### 六、常用操作速查
+
+#### 基础操作
 
 | 操作 | 命令 |
 | ---- | ---- |
@@ -185,66 +323,52 @@ bind r source-file ~/.tmux.conf \; display "Reloaded!"
 | 查看状态 | `git status` |
 | 添加文件 | `git add <file>` 或 `git add .` |
 | 提交变更 | `git commit -m "message"` |
-| 推送 | `git push` |
-| 拉取 | `git pull` |
-| 创建分支 | `git branch <branch>` |
-| 切换分支 | `git checkout <branch>` |
+| 推送 | `git push origin <branch>` |
+| 拉取 | `git pull origin <branch>` |
+| 查看历史 | `git log --oneline --graph` |
+
+#### 分支
+
+| 操作 | 命令 |
+| ---- | ---- |
+| 创建并切换 | `git checkout -b <branch>` |
+| 查看所有分支 | `git branch -a` |
+| 删除本地分支 | `git branch -d <branch>` |
+| 删除远程分支 | `git push origin --delete <branch>` |
+| 重命名分支 | `git branch -m <new-name>` |
+
+#### 撤销与回退
+
+| 操作 | 命令 |
+| ---- | ---- |
+| 撤销未暂存的修改 | `git checkout -- <file>` |
+| 取消暂存 | `git reset HEAD <file>` |
+| 修改最后一次提交 | `git commit --amend` |
+| 回退到指定提交（保留修改） | `git reset --soft <commit>` |
+| 回退并丢弃修改 | `git reset --hard <commit>`（慎用） |
+| 查看所有操作记录 | `git reflog` |
+
+#### 远程仓库
+
+| 操作 | 命令 |
+| ---- | ---- |
+| 添加远程仓库 | `git remote add <别名> <url>` |
+| 查看远程列表 | `git remote -v` |
+| 删除远程 | `git remote remove <别名>` |
+| 拉取远程但不合并 | `git fetch <别名>` |
+| 首次推送并建立跟踪 | `git push -u <别名> <分支>` |
+
+#### 暂存与合并
+
+| 操作 | 命令 |
+| ---- | ---- |
+| 暂存当前修改 | `git stash` |
+| 恢复暂存 | `git stash pop` |
 | 合并分支 | `git merge <branch>` |
-| 查看历史 | `git log` |
+| 变基 | `git rebase <branch>` |
+| 交互式变基 | `git rebase -i HEAD~3` |
 
-### 更详细的 Git 操作
-
-#### 一、分支管理
-
-- **查看所有分支**：`git branch -a`（包括远程分支）
-- **创建并切换到新分支**：`git checkout -b <branch>`
-- **删除本地分支**：`git branch -d <branch>`（安全删除）或 `git branch -D <branch>`（强制删除）
-- **删除远程分支**：`git push origin --delete <branch>`
-- **重命名当前分支**：`git branch -m <new-name>`
-- **查看分支跟踪关系**：`git branch -vv`
-
-#### 二、提交操作
-
-- **修改最后一次提交**：`git commit --amend`（可修改提交信息或添加漏掉的文件）
-- **暂存修改**：`git stash`（临时保存工作目录的修改）
-- **恢复暂存**：`git stash pop`（恢复最近一次暂存）
-- **查看暂存列表**：`git stash list`
-- **选择性暂存**：`git stash push -p`（交互式选择要暂存的内容）
-
-#### 三、撤销与回退
-
-- **撤销工作目录的修改**：`git checkout -- <file>`（危险！不可恢复）
-- **撤销已暂存的文件**：`git reset HEAD <file>`（将文件从暂存区移回工作区）
-- **回退到指定提交**：
-  - `git reset --soft <commit>`：保留修改，只回退提交历史
-  - `git reset --mixed <commit>`：默认，回退提交历史并取消暂存
-  - `git reset --hard <commit>`：彻底丢弃所有修改，谨慎使用！
-- **查看操作记录**：`git reflog`（查看所有 HEAD 变更，可用于恢复误删分支或提交）
-
-#### 四、远程仓库操作
-
-- **添加远程仓库**：`git remote add origin <url>`
-- **查看远程仓库**：`git remote -v`
-- **拉取远程分支**：`git fetch origin`（只下载不合并）
-- **拉取并合并**：`git pull origin <branch>`（相当于 `fetch` + `merge`）
-- **推送并建立跟踪**：`git push -u origin <branch>`（首次推送时使用）
-- **查看提交差异**：`git diff origin/main..HEAD`（比较本地与远程 main 分支）
-
-#### 五、标签管理
-
-- **创建标签**：`git tag v1.0`（轻量标签）或 `git tag -a v1.0 -m "version 1.0"`（带注释标签）
-- **查看所有标签**：`git tag`
-- **推送标签到远程**：`git push origin --tags`
-- **删除标签**：`git tag -d v1.0`（本地）和 `git push origin --delete tag v1.0`（远程）
-
-#### 六、合并与变基
-
-- **合并分支**：`git merge <branch>`（保留分支历史）
-- **变基**：`git rebase <branch>`（使提交历史线性整洁，但会改写历史）
-- **交互式变基**：`git rebase -i HEAD~3`（修改最近 3 次提交）
-
-> PA 提示：每个 PA 阶段结束后及时提交，方便回退和对比。
-PS：vscode的git真好用 
+PS：vscode 的 Git 图形界面确实好用，但命令行也要会用，毕竟 SSH 到服务器上就只有命令行。 
 
 ## make gcc
 

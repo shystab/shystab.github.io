@@ -8,7 +8,7 @@ draft: false
 summary: "后端学习日志"
 description: "本文记录后端的一些学习历程"
 
-categories: ["fastapi"]
+categories: ["学习"]
 tags: ["Fastapi", "全栈","后端"] 
 
 cover: "/images/sixth.jpg" 
