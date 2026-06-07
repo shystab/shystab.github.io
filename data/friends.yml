@@ -2,6 +2,10 @@
   url: https://d-sketon.github.io/
   desc: Hexo 建站
   image: https://d-sketon.github.io/avatar/avatar.webp
+- name: 皓然小站
+  url: https://blog.horonlee.com/
+  desc: 就算生活枯燥，也要勇往直前
+  image: https://bu.dusays.com/2023/02/02/63db3598928c2.jpg
 - name: D-Sketon
   url: https://d-sketon.github.io/astro-theme-reimu/
   desc: Astro 建站
