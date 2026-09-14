@@ -1,7 +1,7 @@
 ---
 title: 'test post'
 date: 2026-02-04
-cover: /images/first.jpg
+cover: /images/cover-01.jpg
 categories: ["TEST"]
 ---
 

@@ -11,7 +11,7 @@ description: "本文系统整理 FastAPI 的核心知识点，并结合实际项
 categories: ["学习"]
 tags: ["FastAPI", "全栈", "后端", "Python", "SQLModel", "异步"]
 
-cover: "/images/eleventh.jpg" 
+cover: "/images/cover-11.jpg" 
 
 toc: true
 comments: true

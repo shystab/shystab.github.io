@@ -11,7 +11,7 @@ description: "李宏毅 HW1 回归任务的学习记录"
 categories: ["学习"]
 tags: ["Deep Learning", "PyTorch", "HW"]
 
-cover: "/images/forth.jpg"
+cover: "/images/cover-04.jpg"
 
 toc: true
 comments: true

@@ -11,7 +11,7 @@ description: "本文记录后端的一些学习历程"
 categories: ["学习"]
 tags: ["Fastapi", "全栈","后端"] 
 
-cover: "/images/sixth.jpg" 
+cover: "/images/cover-06.jpg" 
 
 toc: true
 comments: true

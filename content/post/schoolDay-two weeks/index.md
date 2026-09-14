@@ -11,7 +11,7 @@ description: "i really like u"
 categories: ["记录"]
 tags: ["school day", "泥车", "plan"]
 
-cover: "/images/eighth.jpg" 
+cover: "/images/cover-08.jpg" 
 
 toc: true
 comments: true

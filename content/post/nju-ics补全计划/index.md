@@ -10,7 +10,7 @@ description: "NJU ICS PA 实验的前置准备，整理 Git 工作流、Linux �
 categories: ["学习"]
 tags: ["ics", "Git", "Linux", "Vim", "Tmux", "GDB", "GCC", "Makefile"]
 
-cover: "/images/ninth.jpg"
+cover: "/images/cover-09.jpg"
 
 toc: true
 comments: true

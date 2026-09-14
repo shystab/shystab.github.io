@@ -11,7 +11,7 @@ description: "本文详细记录了博主从 尝试 Stack 主题后，最终选�
 categories: ["技术实践"]
 tags: ["Hugo", "博客", "Reimu", "主题", "GitHub Pages", "心得"]
 
-cover: "/images/third.jpg" 
+cover: "/images/cover-03.jpg" 
 
 toc: true
 comments: true

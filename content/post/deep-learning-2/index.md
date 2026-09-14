@@ -11,7 +11,7 @@ description: "李宏毅 HW2 音素识别任务的学习记录"
 categories: ["学习"]
 tags: ["Deep Learning", "PyTorch", "RNN", "HW"]
 
-cover: "/images/fifth.jpg"
+cover: "/images/cover-05.jpg"
 
 toc: true
 comments: true

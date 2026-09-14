@@ -3,7 +3,7 @@ title: "我的第一篇文章"
 date: 2026-02-04
 tags: ["测试", "Hugo"]
 categories: ["教程"]
-cover: /images/second.jpg
+cover: /images/cover-02.jpg
 summary: "这是我的第一篇博客文章..."
 ---
 ```python

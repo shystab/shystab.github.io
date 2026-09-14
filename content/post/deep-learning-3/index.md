@@ -11,7 +11,7 @@ description: "李宏毅 HW3 图像分类任务的学习记录"
 categories: ["学习"]
 tags: ["Deep Learning", "PyTorch", "CNN", "HW"]
 
-cover: "/images/tenth.jpg"
+cover: "/images/cover-10.jpg"
 
 toc: true
 comments: true

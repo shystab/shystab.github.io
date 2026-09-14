@@ -11,7 +11,7 @@ description: "个人 CUDA 学习记录：算子练习进度、实现思路和容
 categories: ["学习"]
 tags: ["CUDA", "GPU编程", "算子"]
 
-cover: "/images/forteenth.jpg"
+cover: "/images/cover-14.jpg"
 
 toc: true
 comments: true

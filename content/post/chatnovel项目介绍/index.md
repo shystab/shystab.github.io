@@ -11,7 +11,7 @@ description: "详细介绍Novel IDE (Fast)项目的功能特性、技术架构�
 categories: ["项目"]
 tags: ["AI", "写作助手", "全栈开发", "FastAPI", "Next.js", "RAG"]
 
-cover: "/images/thirteenth.jpg" 
+cover: "/images/cover-13.jpg" 
 
 toc: true
 comments: true
