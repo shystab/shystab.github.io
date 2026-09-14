@@ -24,7 +24,8 @@ sponsor: false
 keywords: ["CUDA", "算子", "学习记录"]
 ---
 
-纯记录，不分享。跟着[杜子源的 CUDA学习之路](https://dlog.com.cn/archive/?category=CUDA%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF)学的，跳着看的。
+跟着这位大佬学
+[杜子源的 CUDA学习之路](https://dlog.com.cn/archive/?category=CUDA%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF)
 
 ## 算子练习清单
 
@@ -36,10 +37,10 @@ keywords: ["CUDA", "算子", "学习记录"]
 | 规约 Reduce | ✅ | |
 | Softmax | ✅ | |
 | Norm 系列（LayerNorm / RMSNorm） | ✅ | |
-| 扫描 Scan | ⬜ | |
+| 扫描 Scan | ✅ | |
 | 矩阵乘法 MatMul | ✅ | |
 | 卷积 Convolution | ⬜ | 还没看 |
-| Attention | ⬜ | |
+| Attention | ✅ | |
 
 ## 后面要看的
 

@@ -570,12 +570,8 @@ share:
 
 # show categories card on home page
 home_categories:
-  enable: true
-  content:
-    #- categories: "fastapi" # string (single-layer category) or array (multi-layer category)
-    #  cover: "/images/cover-06.jpg" # empty means random cover
-    - categories:
-      cover:
+  enable: false
+  content: []
 
 ########################################
 # Experimental features
