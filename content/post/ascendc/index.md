@@ -25,3 +25,5 @@ keywords: ["AscendC", "炼丹"]
 ---
 
 ai炼丹大赛。
+
+![比赛最高的一次分数](best-score.jpg)
