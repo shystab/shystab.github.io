@@ -11,7 +11,7 @@ description: "ai炼丹大赛"
 categories: ["比赛"]
 tags: ["AscendC", "AI芯片"]
 
-cover: "/images/cover-15.png"
+cover: "/images/cover-15.jpg"
 
 toc: true
 comments: true
